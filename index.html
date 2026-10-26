@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Pitch da Iungo Intelligence para a Centauro: resultados, como chegamos a eles e o piloto.">
+<meta name="description" content="Iungo Omnichannel Suite para a Centauro: produto, exemplos, resultados e piloto.">
 <title>Iungo para a Centauro</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@400;500&display=swap">
 <style>
-/* Layout: a stack of glowing "slide" frames on deep navy, like the Jornada deck. Neon accents per solution; orange is the sport (track, highlights). Single dark world by design. */
+/* Layout: glowing "slide" frames on deep navy (Jornada deck). Storyline: produto → exemplos → mercado → resultados → como → diferencial → piloto. Single dark world by design. */
 :root{
   color-scheme:dark;
-  --bg:#051028; --bg-2:#0a1c46; --panel:#0b1f4d; --panel-2:#10295f;
+  --bg:#051028; --bg-2:#0a1c46;
   --line:rgba(96,165,255,.42); --line-soft:rgba(96,165,255,.18);
   --fg:#f2f6ff; --dim:#a8b8de; --mute:#7085b5;
   --blue:#3d86ff; --cyan:#4fd0ff; --violet:#8c7bff; --green:#3be39c; --orange:#ff8a3d; --red:#ff4f6d; --amber:#ffb547;
@@ -23,38 +23,36 @@
 *{box-sizing:border-box}
 html{background:var(--bg)}
 body{margin:0;color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.55;
-  background:
-    radial-gradient(1200px 700px at 85% -10%,rgba(61,134,255,.28),transparent 60%),
-    radial-gradient(900px 600px at -10% 30%,rgba(140,123,255,.14),transparent 60%),
-    linear-gradient(180deg,var(--bg-2) 0,var(--bg) 900px,var(--bg))}
+  background:radial-gradient(1200px 700px at 85% -10%,rgba(61,134,255,.28),transparent 60%),radial-gradient(900px 600px at -10% 30%,rgba(140,123,255,.14),transparent 60%),linear-gradient(180deg,var(--bg-2) 0,var(--bg) 900px,var(--bg))}
 h1,h2,h3{margin:0;text-wrap:balance}
 p{margin:0}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:6px}
 
 .wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.sec{padding-block:clamp(14px,2vw,22px)}
-.frame{position:relative;border:1px solid var(--line);border-radius:28px;padding:clamp(24px,4.4vw,60px);
-  background:linear-gradient(180deg,rgba(16,41,95,.55),rgba(7,20,50,.55));
-  box-shadow:0 0 0 1px rgba(79,208,255,.05),0 0 40px rgba(61,134,255,.12),inset 0 1px 0 rgba(255,255,255,.06)}
+.sec{padding-block:clamp(12px,1.8vw,20px)}
+.frame{position:relative;border:1px solid var(--line);border-radius:28px;padding:clamp(24px,4.4vw,56px);background:linear-gradient(180deg,rgba(16,41,95,.55),rgba(7,20,50,.55));box-shadow:0 0 40px rgba(61,134,255,.12),inset 0 1px 0 rgba(255,255,255,.06)}
 .glow{border:1px solid var(--line);border-radius:18px;background:rgba(12,32,80,.6);box-shadow:0 0 22px rgba(61,134,255,.16),inset 0 0 24px rgba(61,134,255,.06)}
-
 .eyebrow{font-family:var(--cond);font-weight:700;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan)}
 .hl{color:var(--orange)}
-.sec-head{display:grid;gap:14px;max-width:820px;margin-bottom:clamp(28px,4vw,48px)}
-.sec-head h2{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,3.8vw,2.9rem);line-height:1.08;letter-spacing:-.02em}
-.sec-head p{color:var(--dim);font-size:1.08rem;max-width:64ch}
+.sec-head{display:grid;gap:12px;max-width:820px;margin-bottom:clamp(26px,3.6vw,44px)}
+.sec-head h2{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,3.8vw,2.8rem);line-height:1.08;letter-spacing:-.02em}
+.sec-head p{color:var(--dim);font-size:1.08rem;max-width:62ch}
 .note{color:var(--mute);font-size:.8rem}
+.chip{font-family:var(--cond);font-size:.85rem;color:var(--fg);padding:4px 11px;border-radius:999px;border:1px solid var(--line);background:rgba(61,134,255,.1);white-space:nowrap}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
 
-/* Progress */
 .progress{position:fixed;top:0;left:0;right:0;height:calc(3px + env(safe-area-inset-top,0px));z-index:20;pointer-events:none}
 .progress span{position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--cyan),var(--blue),var(--orange));transform-origin:left;transform:scaleX(var(--sp,0));box-shadow:0 0 12px var(--cyan)}
 
+.appi{flex:none;width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#ff5a4f,#d9232f);display:grid;place-items:center}
+.appi i{display:inline-flex;gap:2px}
+.appi i b{width:4px;height:14px;background:#fff;transform:skewX(-16deg);border-radius:1px}
+
 /* ---------- HERO ---------- */
-.hero{position:relative;overflow:hidden;padding-block:clamp(28px,4vw,44px) 22px}
-.hero::before{content:"";position:absolute;left:-10%;right:-10%;bottom:-40px;height:340px;pointer-events:none;
-  background-image:linear-gradient(rgba(79,208,255,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(79,208,255,.16) 1px,transparent 1px);
-  background-size:56px 56px;transform:perspective(500px) rotateX(62deg);transform-origin:bottom;
+.hero{position:relative;overflow:hidden;padding-block:clamp(28px,4vw,44px) 8px}
+.hero::before{content:"";position:absolute;left:-10%;right:-10%;bottom:-60px;height:320px;pointer-events:none;
+  background-image:linear-gradient(rgba(79,208,255,.15) 1px,transparent 1px),linear-gradient(90deg,rgba(79,208,255,.15) 1px,transparent 1px);background-size:56px 56px;transform:perspective(500px) rotateX(62deg);transform-origin:bottom;
   -webkit-mask-image:linear-gradient(transparent,#000 70%);mask-image:linear-gradient(transparent,#000 70%)}
 .topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
 .logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:1.35rem;letter-spacing:-.02em}
@@ -62,379 +60,229 @@ a{color:inherit}
 .logo i b{width:7px;height:24px;background:#fff;transform:skewX(-14deg);border-radius:1px}
 .logo i b+b{background:var(--blue)}
 .tag{font-family:var(--cond);font-weight:700;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;padding:7px 14px;border:1px solid var(--line);border-radius:999px;color:var(--dim);background:rgba(12,32,80,.5)}
-.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(20px,4vw,48px);align-items:center;margin-top:clamp(28px,5vw,56px)}
-.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.5rem,6.2vw,4.9rem);line-height:1.02;letter-spacing:-.03em}
-.hero .lede{font-family:var(--display);font-weight:500;color:var(--dim);font-size:clamp(1.15rem,2.1vw,1.6rem);line-height:1.3;margin-top:22px;max-width:30ch}
-.hero .lede b{color:var(--fg);font-weight:700}
-.byline{margin-top:28px;color:var(--mute);font-size:.9rem}
+.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(20px,4vw,48px);align-items:center;margin-top:clamp(28px,5vw,52px)}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,5.6vw,4.4rem);line-height:1.03;letter-spacing:-.03em;margin-top:14px}
+.hero .lede{color:var(--dim);font-size:clamp(1.05rem,1.6vw,1.22rem);line-height:1.5;margin-top:22px;max-width:52ch}
+.hero .lede b{color:var(--fg);font-weight:500}
+.uses{display:grid;gap:10px;margin-top:26px;max-width:52ch}
+.uses div{display:flex;gap:12px;align-items:baseline}
+.uses div::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;background:var(--orange);box-shadow:0 0 10px var(--orange);transform:translateY(-1px)}
+.uses b{font-family:var(--cond);font-weight:700;font-size:1.08rem}
+.uses span{color:var(--dim)}
 
-.stage{position:relative;aspect-ratio:1/1.05;max-width:460px;width:100%;justify-self:center;display:grid;place-items:center}
+.stage{position:relative;aspect-ratio:1/1.05;max-width:440px;width:100%;justify-self:center;display:grid;place-items:center}
 .stage svg.orbits{position:absolute;inset:-8%;width:116%;height:116%;overflow:visible}
 .orb-spin{transform-box:view-box;transform-origin:250px 250px;animation:spin 40s linear infinite}
 .orb-scroll{transform-box:view-box;transform-origin:250px 250px;transform:rotate(var(--rot,0deg))}
 @keyframes spin{to{transform:rotate(360deg)}}
-.phone{position:relative;width:min(250px,62vw);aspect-ratio:9/18.5;border-radius:38px;background:#0a0e18;border:2px solid #4b5677;padding:9px;
-  box-shadow:0 30px 60px -20px rgba(0,0,0,.7),0 0 0 6px rgba(255,255,255,.03),0 0 50px rgba(61,134,255,.35);transform:rotate(-6deg)}
-.screen{position:relative;height:100%;border-radius:30px;background:#f3f5fa;color:#0b1736;overflow:hidden;display:flex;flex-direction:column;font-family:var(--body)}
-.notch{position:absolute;top:8px;left:50%;width:34%;height:20px;border-radius:12px;background:#0a0e18;transform:translateX(-50%);z-index:3}
-.sbar{display:flex;justify-content:space-between;padding:10px 20px 0;font-size:.68rem;font-weight:500;height:34px}
-.pimg{margin:10px 12px 0;border-radius:16px;background:linear-gradient(160deg,#e4e9f6,#fbfcff);aspect-ratio:1.25;display:grid;place-items:center}
-.pimg svg{width:84%;height:auto}
-.pinfo{padding:12px 14px;display:grid;gap:6px}
-.pinfo b{font-family:var(--cond);font-size:1rem;line-height:1.2}
-.pchips{display:flex;flex-wrap:wrap;gap:5px}
-.pchips span{font-size:.62rem;font-weight:500;background:#e3eafc;color:#1f3f8f;padding:3px 7px;border-radius:999px}
-.pbtn{margin:auto 14px 16px;background:#0b1736;color:#fff;border-radius:999px;text-align:center;font-size:.75rem;font-weight:500;padding:9px}
-.push{position:absolute;z-index:5;top:-6%;right:-14%;width:min(250px,62vw);display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:16px;
-  background:rgba(240,244,252,.96);color:#0b1736;box-shadow:0 18px 40px -12px rgba(0,0,0,.6),0 0 30px rgba(79,208,255,.35);font-size:.82rem;line-height:1.3;
-  animation:pushIn .8s cubic-bezier(.2,.8,.2,1) .7s both}
-.push small{display:block;font-size:.66rem;color:#5d6b8e;margin-bottom:2px}
-.appi{flex:none;width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#ff5a4f,#d9232f);display:grid;place-items:center}
-.appi i{display:inline-flex;gap:2px}
-.appi i b{width:4px;height:14px;background:#fff;transform:skewX(-16deg);border-radius:1px}
-@keyframes pushIn{from{opacity:0;transform:translateY(-16px) scale(.96)}}
+.phone{position:relative;width:min(240px,60vw);aspect-ratio:9/18.5;border-radius:38px;background:#0a0e18;border:2px solid #4b5677;padding:9px;box-shadow:0 30px 60px -20px rgba(0,0,0,.7),0 0 50px rgba(61,134,255,.35);transform:rotate(-6deg)}
+.screen{position:relative;height:100%;border-radius:30px;background:linear-gradient(180deg,#1b2f66,#0c1a3e);overflow:hidden;display:flex;flex-direction:column;gap:8px;padding:44px 10px 10px}
+.notch{position:absolute;top:8px;left:50%;width:34%;height:20px;border-radius:12px;background:#0a0e18;transform:translateX(-50%)}
+.clock{text-align:center;font-family:var(--display);font-weight:600;font-size:2.4rem;color:#fff;line-height:1}
+.date{text-align:center;font-size:.72rem;color:#c5d2f3;margin-bottom:10px}
+.pn{display:flex;gap:8px;align-items:flex-start;padding:9px 10px;border-radius:14px;background:rgba(240,244,252,.94);color:#0b1736;font-size:.72rem;line-height:1.3;animation:pushIn .7s cubic-bezier(.2,.8,.2,1) both}
+.pn .appi{width:24px;height:24px;border-radius:6px}
+.pn .appi i b{width:3px;height:11px}
+.pn small{display:block;font-size:.6rem;color:#5d6b8e}
+.pn:nth-of-type(1){animation-delay:.5s}.pn:nth-of-type(2){animation-delay:1.1s}.pn:nth-of-type(3){animation-delay:1.7s}
+@keyframes pushIn{from{opacity:0;transform:translateY(-14px) scale(.96)}}
 
-/* Rings */
-.results{position:relative;margin-top:clamp(36px,5vw,56px);padding:clamp(22px,3vw,34px)}
-.results-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:22px}
-.results-head h2{font-family:var(--display);font-weight:800;font-size:clamp(1.3rem,2.4vw,1.75rem)}
-.rings{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.rcell{display:grid;justify-items:center;text-align:center;gap:14px}
-.ring{--rs:clamp(150px,17vw,210px);position:relative;width:var(--rs);height:var(--rs);max-width:100%}
+/* ---------- MATURITY ---------- */
+.ladder{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:end}
+.rung{padding:22px;display:grid;gap:8px;align-content:start;border-radius:18px;border:1px solid var(--line-soft);background:rgba(12,32,80,.35)}
+.rung:nth-child(1){min-height:200px}
+.rung:nth-child(2){min-height:250px}
+.rung:nth-child(3){min-height:310px;border-color:var(--cyan);background:linear-gradient(180deg,rgba(61,134,255,.28),rgba(12,32,80,.6));box-shadow:0 0 36px rgba(79,208,255,.3)}
+.rung .lvl{font-family:var(--cond);font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.rung:nth-child(3) .lvl{color:var(--cyan)}
+.rung h3{font-family:var(--display);font-weight:800;font-size:1.3rem;line-height:1.15}
+.rung p{color:var(--dim);font-size:.95rem}
+.rung .ex{margin-top:auto;font-family:var(--cond);font-size:.95rem;color:var(--fg);padding:10px 12px;border-radius:12px;background:rgba(5,16,40,.55);border:1px solid var(--line-soft)}
+.rung:nth-child(3) .ex{border-color:rgba(255,138,61,.6);box-shadow:0 0 14px rgba(255,138,61,.2)}
+.iu-badge{justify-self:start;font-family:var(--cond);font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;background:var(--orange);color:#1a0d00;padding:3px 10px;border-radius:999px}
+
+/* ---------- EXAMPLES ---------- */
+.examples{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.ex-card{padding:20px;display:flex;flex-direction:column;gap:16px;transition:translate .25s ease,border-color .25s ease}
+.ex-card:hover{translate:0 -4px;border-color:var(--cyan)}
+.ex-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.ex-kind{font-family:var(--cond);font-weight:700;font-size:1.25rem;line-height:1.2}
+.msg{border-radius:16px;padding:14px;background:#f3f5fa;color:#0b1736;font-size:.9rem;line-height:1.42;box-shadow:0 14px 30px -14px rgba(0,0,0,.6)}
+.msg .mh{display:flex;gap:8px;align-items:center;margin-bottom:8px;font-size:.72rem;color:#5d6b8e}
+.msg .mh .appi{width:22px;height:22px;border-radius:6px}
+.msg .mh .appi i b{width:3px;height:10px}
+.msg.wa{background:#ece5dd}
+.msg.wa .bub{background:#fff;border-radius:4px 12px 12px 12px;padding:9px 11px}
+.msg.sms .bub{background:#e4e8f2;border-radius:12px 12px 12px 4px;padding:9px 11px}
+.msg u{color:#1f5be0}
+.msg .qr{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.msg .qr span{font-size:.75rem;color:#0a7a55;background:#fff;border-radius:999px;padding:5px 10px;border:1px solid #cfe9dc}
+.sig h4{margin:0 0 8px;font-family:var(--cond);font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan)}
+.sig ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.sig li{display:flex;gap:10px;font-size:.93rem;color:var(--dim);line-height:1.4}
+.sig li::before{content:"";flex:none;width:7px;height:7px;margin-top:.5em;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+.why{margin-top:auto;padding-top:14px;border-top:1px solid var(--line-soft);font-size:.93rem}
+.why b{color:var(--orange);font-family:var(--cond);font-size:1rem}
+.rules{margin-top:22px;padding:18px 22px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:center}
+.rules .ico{width:46px;height:46px;border-radius:12px;border:1.5px solid var(--cyan);display:grid;place-items:center;color:var(--cyan);box-shadow:0 0 14px rgba(79,208,255,.35)}
+.rules .ico svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+.rules p{color:var(--dim)}
+.rules b{color:var(--fg);font-weight:500}
+
+/* ---------- MARKET ---------- */
+.market{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.mk{padding:24px;display:grid;gap:10px;align-content:start}
+.mk .n{font-family:var(--display);font-weight:800;font-size:clamp(2.8rem,5vw,4rem);line-height:.95;letter-spacing:-.04em;color:var(--cyan);text-shadow:0 0 22px rgba(79,208,255,.4)}
+.mk .n.o{color:var(--orange);text-shadow:0 0 22px rgba(255,138,61,.4)}
+.mk .t{font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.05;color:var(--green);text-shadow:0 0 20px rgba(59,227,156,.35)}
+.mk h3{font-family:var(--cond);font-weight:700;font-size:1.15rem}
+.mk p{color:var(--dim);font-size:.93rem}
+
+/* ---------- RESULTS ---------- */
+.res-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:20px;align-items:stretch}
+.res-col{padding:clamp(20px,2.6vw,28px);display:flex;flex-direction:column}
+.res-col .rings{margin-block:auto}
+.res-col > h3{font-family:var(--cond);font-weight:700;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:22px}
+.rings{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.rcell{display:grid;justify-items:center;text-align:center;gap:12px}
+.ring{--rs:clamp(130px,13vw,176px);position:relative;width:var(--rs);height:var(--rs);max-width:100%}
 .ring svg{width:100%;height:100%;transform:rotate(-90deg);overflow:visible}
 .ring .rt{fill:none;stroke:rgba(150,180,255,.12);stroke-width:7}
-.ring .ra{fill:none;stroke:var(--c);stroke-width:7;stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:var(--off,7);filter:drop-shadow(0 0 6px var(--c)) drop-shadow(0 0 14px var(--c));transition:stroke-dashoffset 1.8s cubic-bezier(.2,.7,.2,1)}
+.ring .ra{fill:none;stroke:var(--c);stroke-width:7;stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:7;filter:drop-shadow(0 0 6px var(--c)) drop-shadow(0 0 14px var(--c));transition:stroke-dashoffset 1.8s cubic-bezier(.2,.7,.2,1)}
 .ring .ri{fill:none;stroke:var(--c);stroke-width:1;opacity:.35}
 .rin{position:absolute;inset:0;display:grid;place-items:center;align-content:center;gap:4px}
-.rnum{font-family:var(--display);font-weight:800;font-size:calc(var(--rs)*.24);line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums;white-space:nowrap;text-shadow:0 0 18px rgba(255,255,255,.25)}
+.rnum{font-family:var(--display);font-weight:800;font-size:calc(var(--rs)*.25);line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums;white-space:nowrap}
 .rnum small{font-size:.6em}
-.long .rnum{font-size:calc(var(--rs)*.18)}
-.rsub{font-family:var(--cond);font-size:calc(var(--rs)*.075);letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
-.rlabel{font-family:var(--cond);font-weight:700;font-size:1.12rem;line-height:1.25}
-.rlabel span{display:block;font-family:var(--body);font-weight:400;font-size:.92rem;color:var(--dim);margin-top:4px;max-width:28ch}
+.long .rnum{font-size:calc(var(--rs)*.19)}
+.rsub{font-family:var(--cond);font-size:calc(var(--rs)*.08);letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
+.rlabel{font-family:var(--cond);font-weight:700;font-size:1.05rem;line-height:1.25}
+.rlabel span{display:block;font-family:var(--body);font-weight:400;font-size:.88rem;color:var(--dim);margin-top:3px}
+.ops{display:grid;gap:16px}
+.op{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start}
+.op .ico{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--c);color:var(--c);display:grid;place-items:center;box-shadow:0 0 14px var(--c)}
+.op .ico svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.op b{display:block;font-family:var(--cond);font-weight:700;font-size:1.1rem}
+.op span{color:var(--dim);font-size:.93rem}
+.res-foot{margin-top:18px;display:flex;gap:12px 20px;align-items:center;flex-wrap:wrap}
+.res-foot .lbl{font-family:var(--cond);font-weight:700;color:var(--dim)}
 
-/* ---------- CONTEXT ---------- */
-.ctx{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(24px,4vw,56px);align-items:center}
-.funnel{display:grid;gap:18px;justify-items:center}
-.funnel svg{width:100%;max-width:420px;height:auto}
-.funnel .callout{padding:20px 24px;text-align:center;color:var(--dim);font-size:1rem}
-.funnel .callout b{color:var(--fg)}
-.ctx-rings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px}
-.ctx-rings .ring{--rs:clamp(140px,15vw,180px)}
-.src{margin-top:24px}
+/* ---------- HOW ---------- */
+.how{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.how::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--violet),var(--orange));transform-origin:left;transform:scaleX(var(--p,1));box-shadow:0 0 10px var(--cyan);z-index:1}
+.hstep{position:relative;padding-top:26px;display:grid;gap:10px;align-content:start;border-top:2px solid var(--line-soft);transition:opacity .5s ease}
+.hstep::after{content:"";position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);z-index:2;transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+.hstep .k{font-family:var(--cond);font-weight:700;font-size:.8rem;letter-spacing:.12em;color:var(--cyan)}
+.hstep h3{font-family:var(--display);font-weight:800;font-size:1.5rem}
+.hstep p{color:var(--dim);font-size:.97rem}
+.how.track .hstep{opacity:.35}
+.how.track .hstep.on{opacity:1}
+.how.track .hstep.on::after{transform:scale(1.5)}
 
 /* ---------- DIFFERENTIAL ---------- */
-.dstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:clamp(28px,4vw,44px)}
-.dstat{padding:22px 24px;display:flex;align-items:center;gap:18px}
-.dn{font-family:var(--display);font-weight:800;font-size:clamp(3.4rem,6.6vw,5.2rem);line-height:.9;letter-spacing:-.04em;color:var(--orange);text-shadow:0 0 24px rgba(255,138,61,.45)}
-.dstat p{color:var(--dim);font-size:.98rem;line-height:1.4}
-.dtable{display:grid;border-radius:18px;overflow:hidden;border:1px solid var(--line-soft)}
-.drow{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1.1fr) minmax(0,1.2fr)}
-.drow + .drow{border-top:1px solid var(--line-soft)}
-.drow > span{padding:18px 22px;font-size:.98rem;line-height:1.45}
-.dhead > span{font-family:var(--cond);font-weight:700;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding-block:14px}
-.dhead .iu{color:var(--cyan)}
-.drow .new,.dhead .iu{background:rgba(61,134,255,.12);box-shadow:inset 1px 0 0 var(--line)}
-.topic{font-family:var(--cond);font-weight:700;font-size:1.08rem!important;color:var(--fg)}
-.old{color:var(--mute);position:relative;padding-left:46px!important}
-.old::before{content:"";position:absolute;left:22px;top:28px;width:12px;height:2px;background:var(--red);box-shadow:0 0 8px var(--red)}
-.new{color:var(--fg);position:relative;padding-left:48px!important}
-.new::before{content:"";position:absolute;left:22px;top:23px;width:12px;height:12px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
-
-/* ---------- SIX SOLUTIONS (orbit) ---------- */
-.orbit{position:relative;aspect-ratio:1000/580;max-width:1060px;margin:0 auto}
-.orbit svg{position:absolute;inset:0;width:100%;height:100%}
-.core{position:absolute;left:50%;top:53%;transform:translate(-50%,-50%);width:28%;text-align:center;display:grid;gap:6px}
-.core b{font-family:var(--display);font-weight:800;font-size:clamp(1rem,1.9vw,1.4rem);line-height:1.15;text-shadow:0 0 16px rgba(79,208,255,.6)}
-.core span{font-family:var(--cond);font-size:clamp(.78rem,1.2vw,.95rem);color:var(--dim)}
-.node{position:absolute;transform:translate(-50%,-50%);--c:var(--cyan)}
-.bulb{width:clamp(64px,8vw,92px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;color:var(--c);
-  background:radial-gradient(circle at 50% 40%,rgba(255,255,255,.08),rgba(5,16,40,.92) 70%);
-  border:2px solid var(--c);box-shadow:0 0 18px var(--c),0 0 40px -8px var(--c),inset 0 0 18px -6px var(--c);transition:transform .35s ease,box-shadow .35s ease}
-.bulb svg{width:44%;height:44%;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;position:static}
-.node:hover .bulb{transform:scale(1.08);box-shadow:0 0 26px var(--c),0 0 60px -6px var(--c),inset 0 0 22px -6px var(--c)}
-.ntext{position:absolute;top:50%;transform:translateY(-50%);width:clamp(150px,17vw,200px);display:grid;gap:2px}
-.node.l .ntext{right:calc(100% + 14px);text-align:right}
-.node.r .ntext{left:calc(100% + 14px)}
-.ntext small{font-family:var(--cond);font-size:.82rem;color:var(--dim)}
-.ntext b{font-family:var(--cond);font-weight:700;font-size:1.12rem;color:var(--fg)}
-.ntext span{font-size:.86rem;color:var(--dim);line-height:1.35}
-.orbit-list{display:none}
-
-/* ---------- HOW: data flow & channels ---------- */
-.flow{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;counter-reset:f}
-.flow::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--blue),var(--violet),var(--orange));transform-origin:left;transform:scaleX(var(--p,1));box-shadow:0 0 10px var(--cyan);z-index:1}
-.step{position:relative;padding:26px 6px 0 0;display:grid;gap:8px;align-content:start;border-top:2px solid var(--line-soft);transition:opacity .5s ease}
-.step::before{counter-increment:f;content:counter(f,decimal-leading-zero);font-family:var(--cond);font-weight:700;font-size:.8rem;color:var(--cyan);letter-spacing:.1em}
-.step::after{content:"";position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);z-index:2;transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
-.step h3{font-family:var(--cond);font-weight:700;font-size:1.25rem}
-.step p{color:var(--dim);font-size:.95rem}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
-.chip{font-family:var(--cond);font-size:.82rem;color:var(--fg);padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(61,134,255,.1)}
-.flow.track .step{opacity:.35}
-.flow.track .step.on{opacity:1}
-.flow.track .step.on::after{transform:scale(1.5)}
-
-.xray{margin-top:36px;padding:20px 24px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:20px;align-items:center}
-.xray .face{width:58px;height:58px;border-radius:14px;border:1.5px solid var(--cyan);display:grid;place-items:center;color:var(--cyan);box-shadow:0 0 16px rgba(79,208,255,.4)}
-.xray .face svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.6}
-.xray h3{font-family:var(--cond);font-weight:700;font-size:1.15rem}
-.xray .quote{font-family:var(--cond);font-size:1.02rem;color:var(--fg);padding:10px 16px;border:1px solid rgba(255,138,61,.6);border-radius:14px;box-shadow:0 0 16px rgba(255,138,61,.25)}
-.xray p{color:var(--dim);font-size:.92rem}
-
-.channels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px}
-.ch{padding:24px;display:flex;flex-direction:column;gap:8px;transition:translate .25s ease,border-color .25s ease}
-.ch:hover{translate:0 -4px;border-color:var(--cyan)}
-.ch .when{font-family:var(--cond);font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--cyan)}
-.ch h3{font-family:var(--cond);font-weight:700;font-size:1.3rem}
-.ch p{color:var(--dim);font-size:.95rem}
-.ch .roi{order:-1;font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,4.6vw,3.6rem);line-height:1;letter-spacing:-.04em;color:var(--orange);text-shadow:0 0 22px rgba(255,138,61,.45);white-space:nowrap}
-.ch .roi small{font-size:.55em}
-.ch .roi em{font-style:normal;font-family:var(--cond);font-size:.3em;font-weight:500;letter-spacing:0;color:var(--dim);margin-left:8px;text-shadow:none}
-.ch .roi.txt{font-size:clamp(1.3rem,2.2vw,1.65rem);letter-spacing:-.01em;white-space:normal;line-height:1.1;min-height:1em;display:flex;align-items:flex-end}
-.foot{margin-top:18px;color:var(--dim);font-size:.9rem}
-
-/* ---------- TWO CONVERSATIONS ---------- */
-.convo{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,2.15fr);gap:20px;align-items:stretch}
-.side{padding:22px;display:grid;gap:14px;align-content:start;border-radius:18px}
-.side-label{font-family:var(--cond);font-weight:700;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase}
-.mass{border:1px dashed rgba(168,184,222,.35);color:var(--dim);transition:opacity .8s ease,filter .8s ease}
-.mass .blast{border-radius:12px;padding:16px;display:grid;gap:8px;background:rgba(168,184,222,.08)}
-.mass .blast b{font-family:var(--cond);font-size:1.15rem;color:var(--fg)}
-.bar{height:9px;border-radius:3px;background:rgba(168,184,222,.18)}
-.bar.s{width:65%}
-.convo.lit .mass{opacity:.45;filter:grayscale(1)}
-.one{transition:box-shadow .8s ease,border-color .8s ease}
-.one .side-label{color:var(--cyan)}
-.convo.lit .one{border-color:var(--cyan);box-shadow:0 0 34px rgba(79,208,255,.3),inset 0 0 24px rgba(61,134,255,.08)}
-.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.moment{display:grid;gap:10px;align-content:start}
-.moment .n{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--cyan);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:.9rem;color:var(--cyan);box-shadow:0 0 12px rgba(79,208,255,.4)}
-.moment .cap{font-size:.92rem;color:var(--dim)}
-.mini{border-radius:16px;background:#f3f5fa;color:#0b1736;padding:12px;font-size:.84rem;line-height:1.4;box-shadow:0 0 0 4px rgba(255,255,255,.04),0 14px 30px -14px rgba(0,0,0,.6)}
-.mini .sms{background:#e4e8f2;border-radius:14px 14px 14px 4px;padding:10px 12px}
-.mini u{color:#1f5be0}
-.mini .pimg{margin:0 0 8px}
-.mini .pm{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
-.mini .pm b{font-family:var(--display);font-weight:800;font-size:1.05rem;color:#e0482a}
-.mini .pm em{font-style:normal;font-size:.72rem;color:#5d6b8e}
-.mini .pbtn{margin:8px 0 0}
-.kit{display:grid;gap:6px}
-.kit div{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#e9edf7;border-radius:10px;padding:8px 10px;font-size:.8rem}
-.kit div span:last-child{font-weight:500;color:#1f5be0;white-space:nowrap}
-
-/* ---------- TRACK (réguas) ---------- */
-.trackart{position:relative;aspect-ratio:1200/380;margin-top:24px}
-.trackart svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.notif{position:absolute;width:clamp(190px,21%,250px);transform:translate(-50%,calc(-100% - 34px));display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:14px;
-  background:rgba(240,244,252,.96);color:#0b1736;font-size:.86rem;line-height:1.3;box-shadow:0 0 0 1px rgba(255,255,255,.4),0 0 26px rgba(79,208,255,.35);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.8,.2,1)}
-.notif small{display:block;font-size:.66rem;color:#5d6b8e;margin-bottom:2px}
-.notif::after{content:"";position:absolute;left:50%;top:100%;width:2px;height:34px;background:linear-gradient(var(--cyan),rgba(79,208,255,.2));box-shadow:0 0 8px var(--cyan)}
-.trackart.track .notif{opacity:0;transform:translate(-50%,calc(-100% - 14px))}
-.trackart.track .notif.on{opacity:1;transform:translate(-50%,calc(-100% - 34px))}
-.pin{transition:opacity .4s ease}
-.trackart.track .pin{opacity:.25}
-.trackart.track .pin.on{opacity:1}
-.tstops{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:18px;text-align:center}
-.tstop h3{font-family:var(--cond);font-weight:700;font-size:1.35rem;color:var(--orange);text-shadow:0 0 14px rgba(255,138,61,.35)}
-.tstop p{color:var(--dim);font-size:.95rem;margin-top:4px}
-.tstop .notif-m{display:none}
-.control{margin-top:28px;padding:18px 24px;border-color:rgba(255,138,61,.6);box-shadow:0 0 24px rgba(255,138,61,.18);text-align:center;font-size:1.05rem}
-.control b{color:var(--orange)}
-
-/* ---------- CHATS ---------- */
-.chats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,4vw,48px)}
-.chatcol{display:grid;gap:18px;justify-items:center}
-.cphone{width:min(320px,100%);border-radius:36px;background:#0a0e18;border:2px solid #4b5677;padding:9px;box-shadow:0 0 44px rgba(61,134,255,.25)}
-.cscreen{border-radius:28px;overflow:hidden;background:#ece5dd;color:#111b21;display:flex;flex-direction:column;min-height:470px}
-.chead{display:flex;align-items:center;gap:10px;padding:14px 14px 10px;background:#f7f7f7;border-bottom:1px solid #ddd}
-.chead .appi{width:34px;height:34px;border-radius:50%}
-.chead b{display:block;font-size:.92rem}
-.chead small{font-size:.72rem;color:#667781}
-.cbody{flex:1;padding:14px 12px;display:flex;flex-direction:column;gap:8px;font-size:.86rem;line-height:1.38}
-.bubble{max-width:84%;padding:8px 11px;border-radius:12px;box-shadow:0 1px 1px rgba(0,0,0,.08);transition:opacity .45s ease,transform .45s ease;transition-delay:calc(var(--i,0)*550ms)}
-.bubble.me{align-self:flex-end;background:#d9fdd3;border-top-right-radius:4px}
-.bubble.bot{align-self:flex-start;background:#fff;border-top-left-radius:4px}
-.bubble.cards{display:flex;gap:6px;max-width:100%;padding:6px;background:#fff}
-.bubble.cards div{flex:1;min-width:0;background:#f1f3f8;border-radius:8px;padding:6px;display:grid;gap:4px;font-size:.68rem;color:#3b4a6b}
-.bubble.cards svg{width:100%;height:auto}
-.cphone.seq .bubble{opacity:0;transform:translateY(10px)}
-.cphone.seq.play .bubble{opacity:1;transform:none}
-.cinput{margin:0 10px 12px;background:#fff;border-radius:999px;padding:9px 14px;font-size:.8rem;color:#8696a0}
-.chatcap{text-align:center;max-width:44ch;color:var(--dim);font-size:1rem}
-.chatcap b{color:var(--orange);font-family:var(--cond);font-size:1.15rem}
-
-/* ---------- CATALOG split & agentic ---------- */
-.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-radius:22px;overflow:hidden;border:1px solid var(--line)}
-.half{padding:clamp(20px,3vw,32px);display:grid;gap:16px;align-content:start}
-.half.before{background:linear-gradient(180deg,#5b6377,#434a5d);color:#e9ecf4}
-.half.after{background:radial-gradient(500px 300px at 60% 40%,rgba(61,134,255,.35),transparent 70%),linear-gradient(180deg,#0e2a66,#0a1d47)}
-.half h3{font-family:var(--cond);font-weight:700;font-size:1.6rem}
-.half.after h3{color:var(--cyan)}
-.shoebox{position:relative;aspect-ratio:16/9;display:grid;place-items:center}
-.shoebox svg.shoe{width:72%;height:auto}
-.before .shoebox svg.shoe{filter:grayscale(1) blur(1.6px);opacity:.75}
-.jag{justify-self:center;font-family:ui-monospace,Menlo,monospace;font-size:clamp(.95rem,1.8vw,1.2rem);letter-spacing:.06em;background:#2e3342;color:#cfd5e3;padding:14px 22px;
-  clip-path:polygon(0 12%,4% 0,9% 10%,15% 2%,22% 9%,30% 0,38% 8%,47% 1%,55% 9%,63% 0,71% 8%,79% 2%,87% 10%,94% 0,100% 12%,97% 50%,100% 88%,94% 100%,86% 90%,78% 100%,70% 92%,61% 100%,52% 91%,44% 100%,35% 92%,27% 100%,19% 91%,11% 100%,4% 90%,0 88%,3% 50%)}
-.before p{color:#d3d8e6;font-size:.95rem}
-.atag{position:absolute;font-family:var(--cond);font-size:.9rem;padding:6px 12px;border-radius:10px;border:1.5px solid var(--orange);background:rgba(10,29,71,.85);box-shadow:0 0 14px rgba(255,138,61,.35);white-space:nowrap}
-.atag b{color:var(--fg)}
-.atag{color:var(--dim)}
-.after .ptitle{font-family:var(--cond);font-size:1.12rem;line-height:1.35}
-.after .ptitle span{color:var(--cyan)}
-.query{margin-top:20px;display:grid;grid-template-columns:minmax(0,1.4fr) auto minmax(0,1fr);gap:16px;align-items:center}
-.qbar{display:flex;gap:12px;align-items:center;padding:14px 18px;border-radius:999px;border:1px solid var(--line);background:rgba(5,16,40,.8);box-shadow:0 0 20px rgba(79,208,255,.2);font-size:1rem}
-.qbar svg{flex:none;width:20px;height:20px;fill:none;stroke:var(--cyan);stroke-width:2}
-.qarrow{color:var(--cyan);font-size:1.6rem;line-height:1}
-.qans{padding:14px 18px;border-radius:14px;border:1px solid rgba(255,138,61,.6);font-family:var(--cond);font-size:1.02rem;box-shadow:0 0 16px rgba(255,138,61,.2)}
-.qans b{color:var(--orange)}
-
-.agentic{margin-top:28px;padding:clamp(20px,3vw,32px);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);gap:clamp(20px,3vw,40px);align-items:center}
-.radar{display:grid;gap:10px;justify-items:center;text-align:center}
-.radar svg{width:min(240px,100%);height:auto}
-.radar h3{font-family:var(--cond);font-weight:700;font-size:1.2rem;color:var(--orange)}
-.radar p{font-size:.9rem;color:var(--dim);max-width:30ch}
-.pipe{display:grid;grid-template-columns:auto minmax(30px,1fr) auto minmax(60px,1.4fr) auto;align-items:center;gap:10px}
-.pnode{text-align:center;display:grid;gap:8px;justify-items:center}
-.pnode .box{width:76px;height:76px;border-radius:16px;border:1.5px solid var(--cyan);display:grid;place-items:center;color:var(--cyan);box-shadow:0 0 18px rgba(79,208,255,.35),inset 0 0 18px rgba(79,208,255,.12)}
-.pnode .box svg{width:38px;height:38px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linejoin:round}
-.pnode b{font-family:var(--cond);font-weight:700;font-size:.98rem;color:var(--orange)}
-.pnode span{font-family:var(--cond);font-size:.9rem;color:var(--dim);margin-top:-6px}
-.beam{height:4px;border-radius:2px;background:linear-gradient(90deg,rgba(79,208,255,.2),var(--cyan));box-shadow:0 0 12px var(--cyan)}
-.fan{width:100%;height:150px}
-.dests{display:grid;gap:14px}
-.dest{font-family:var(--cond);line-height:1.2}
-.dest b{display:block;font-weight:700;font-size:1.02rem}
-.dest span{color:var(--dim);font-size:.9rem}
-.agentic .note{grid-column:1/-1}
-
-/* ---------- PROOF ---------- */
-.logos{display:flex;flex-wrap:wrap;justify-content:space-around;gap:12px 0;padding:18px 10px;border-color:rgba(255,138,61,.55);box-shadow:0 0 24px rgba(255,138,61,.18)}
-.logos span{font-family:var(--display);font-weight:700;font-size:clamp(.95rem,1.6vw,1.15rem);color:var(--fg);padding:4px 18px;opacity:.92}
-.logos span + span{border-left:1px solid var(--line-soft)}
-.proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:22px}
-.proof > div{padding:24px;display:grid;gap:8px;align-content:start}
-.proof h3{font-family:var(--cond);font-weight:700;font-size:1.25rem}
-.proof p{color:var(--dim);font-size:.95rem}
-.proof .k{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,4.4vw,3.4rem);line-height:1;letter-spacing:-.04em;color:var(--orange);text-shadow:0 0 22px rgba(255,138,61,.4)}
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.pillar{padding:24px 22px;display:grid;gap:12px;align-content:start;--c:var(--cyan);transition:translate .25s ease,border-color .25s ease}
+.pillar:hover{translate:0 -4px;border-color:var(--c)}
+.bulb{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;color:var(--c);background:radial-gradient(circle at 50% 40%,rgba(255,255,255,.08),rgba(5,16,40,.92) 70%);border:2px solid var(--c);box-shadow:0 0 16px var(--c),inset 0 0 16px -6px var(--c)}
+.bulb svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.pillar h3{font-family:var(--display);font-weight:800;font-size:1.2rem;line-height:1.2}
+.agentic{margin-top:18px;padding:22px 24px;display:grid;grid-template-columns:auto minmax(0,1.3fr) minmax(0,1fr);gap:18px 24px;align-items:center;border-color:rgba(61,134,255,.6);box-shadow:0 0 26px rgba(61,134,255,.22),inset 0 0 24px rgba(61,134,255,.06)}
+.agentic .bulb{--c:var(--blue)}
+.ag-text{display:grid;gap:6px}
+.prods{display:flex;flex-wrap:wrap;gap:6px}
+.prod{justify-self:start;white-space:nowrap;font-family:var(--cond);font-weight:700;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;color:var(--c,var(--cyan));padding:3px 10px;border-radius:999px;border:1px solid var(--c,var(--cyan));background:rgba(5,16,40,.5)}
+.ag-text .prod{--c:var(--blue)}
+.suite{margin-top:28px;padding-top:24px;border-top:1px solid var(--line-soft)}
+.suite-h{font-family:var(--cond);font-weight:700;font-size:1.1rem;color:var(--dim);margin-bottom:16px}
+.suite-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.sp{display:grid;gap:4px;align-content:start;padding:14px;border-radius:14px;border:1px solid var(--line-soft);background:rgba(12,32,80,.45);border-top:3px solid var(--c);box-shadow:0 -6px 18px -12px var(--c)}
+.sp b{font-family:var(--display);font-weight:800;font-size:1rem;line-height:1.15;color:var(--fg)}
+.sp span{font-size:.85rem;color:var(--dim);line-height:1.35}
+@media (max-width:1000px){.suite-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.suite-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ag-text h3{font-family:var(--display);font-weight:800;font-size:1.2rem;line-height:1.2}
+.ag-text p{color:var(--dim);font-size:.95rem}
+.ag-road{display:grid;gap:8px}
+.ag-road .lbl{font-family:var(--cond);font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--violet)}
+.ag-road .lbl.on{color:var(--cyan)}
+.chip.live{border-color:var(--cyan);background:rgba(79,208,255,.16);box-shadow:0 0 10px rgba(79,208,255,.25)}
+.chip.muse{border-color:rgba(37,211,102,.7);background:rgba(37,211,102,.12)}
+@media (max-width:900px){.agentic{grid-template-columns:auto minmax(0,1fr)}.ag-road{grid-column:1/-1}}
+@media (max-width:640px){.agentic{grid-template-columns:1fr}}
+.pillar p{color:var(--dim);font-size:.95rem}
 
 /* ---------- CTA ---------- */
-.cta h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.8vw,3.5rem);line-height:1.05;letter-spacing:-.02em;max-width:18ch}
-.cta .lede{color:var(--dim);font-size:1.12rem;margin-top:16px;max-width:58ch}
-.pilot{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:12px;align-items:stretch}
-.pilot li.pstep{position:relative;padding:44px 22px 22px;text-align:center;display:grid;gap:6px;align-content:start}
-.pilot .num{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.4rem;
-  background:var(--bg);border:2px solid var(--cyan);box-shadow:0 0 18px rgba(79,208,255,.5);transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.cta h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.6vw,3.3rem);line-height:1.05;letter-spacing:-.02em;max-width:18ch;margin-top:12px}
+.cta .lede{color:var(--dim);font-size:1.1rem;margin-top:14px;max-width:58ch}
+.pilot{list-style:none;margin:52px 0 0;padding:0;display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:12px;align-items:stretch}
+.pstep{position:relative;padding:42px 22px 22px;text-align:center;display:grid;gap:6px;align-content:start}
+.pilot .num{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.35rem;background:var(--bg);border:2px solid var(--cyan);box-shadow:0 0 18px rgba(79,208,255,.5)}
 .pilot h3{font-family:var(--cond);font-weight:700;font-size:1.2rem;color:var(--orange)}
 .pilot p{color:var(--dim);font-size:.95rem}
-.pilot li.chev{display:grid;place-items:center;color:var(--cyan);font-size:2rem;text-shadow:0 0 12px var(--cyan)}
-.pilot li.pstep.pre .num{transform:translate(-50%,-50%) scale(.4)}
-.cta-row{display:flex;flex-wrap:wrap;gap:18px 30px;align-items:center;margin-top:44px}
-.btn{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,#25d366,#13a14d);color:#fff;text-decoration:none;font-family:var(--display);font-weight:700;font-size:1.08rem;padding:17px 28px;border-radius:999px;
-  box-shadow:0 0 30px rgba(37,211,102,.4),0 10px 30px -10px rgba(0,0,0,.6);transition:transform .2s ease,box-shadow .2s ease}
+.chev{display:grid;place-items:center;color:var(--cyan);font-size:2rem;text-shadow:0 0 12px var(--cyan)}
+.cta-row{display:flex;flex-wrap:wrap;gap:18px 30px;align-items:center;margin-top:42px}
+.btn{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,#25d366,#13a14d);color:#fff;text-decoration:none;font-family:var(--display);font-weight:700;font-size:1.08rem;padding:17px 28px;border-radius:999px;box-shadow:0 0 30px rgba(37,211,102,.4),0 10px 30px -10px rgba(0,0,0,.6);transition:transform .2s ease,box-shadow .2s ease}
 .btn:hover{transform:translateY(-2px);box-shadow:0 0 44px rgba(37,211,102,.6),0 14px 30px -10px rgba(0,0,0,.6)}
 .btn svg{width:22px;height:22px}
 .contact{color:var(--dim);font-size:.98rem;line-height:1.6}
 .contact b{color:var(--fg);font-weight:500}
 .copy{background:transparent;border:1px solid var(--line);color:var(--fg);font:inherit;font-size:.82rem;padding:3px 11px;border-radius:999px;cursor:pointer;margin-left:8px}
 .copy:hover{border-color:var(--cyan)}
-.sign{margin-top:48px;padding-top:22px;border-top:1px solid var(--line-soft);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--mute);font-size:.88rem}
+.sign{margin-top:44px;padding-top:20px;border-top:1px solid var(--line-soft);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--mute);font-size:.88rem}
 .sign b{font-family:var(--display);color:var(--fg);font-weight:600}
 
-/* ---------- Scroll reveal ---------- */
-.rv{transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1),translate .25s ease,border-color .25s ease,filter .8s ease;transition-delay:var(--d,0ms),var(--d,0ms),0ms,0ms,0ms}
+/* ---------- Reveal ---------- */
+.rv{transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1),translate .25s ease,border-color .25s ease;transition-delay:var(--d,0ms),var(--d,0ms),0ms,0ms}
 .rv.pre{opacity:0;transform:translateY(32px)}
-.rv.pre-l{opacity:0;transform:translateX(-36px)}
 .rv.pre-s{opacity:0;transform:scale(.92)}
+.rung.rv.pre{transform:translateY(60px)}
 
 /* ---------- Responsive ---------- */
 @media (max-width:1000px){
-  .orbit{aspect-ratio:auto}
-  .orbit svg,.orbit .node,.orbit .core{display:none}
-  .orbit-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-  .ol-core{grid-column:1/-1;text-align:center;padding:18px;display:grid;gap:4px}
-  .ol-core b{font-family:var(--display);font-weight:800;font-size:1.25rem}
-  .ol-core span{font-family:var(--cond);color:var(--dim)}
-  .ol{display:flex;gap:14px;align-items:center;padding:14px 16px;--c:var(--cyan)}
-  .ol .bulb{width:56px;flex:none}
-  .ol .ntext{position:static;transform:none;width:auto}
-  .agentic{grid-template-columns:1fr}
+  .pillars{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .res-grid{grid-template-columns:1fr}
 }
 @media (max-width:900px){
-  .hero-grid,.ctx,.convo{grid-template-columns:1fr}
-  .stage{max-width:380px;margin-top:20px}
-  .flow{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}
-  .flow::before{display:none}
-  .flow.track .step{opacity:1}
-  .trackart{margin-top:20px}
-  .notif{display:none}
-  .tstops{grid-template-columns:repeat(2,minmax(0,1fr));text-align:left}
-  .tstop .notif-m{display:flex;position:static;transform:none;width:auto;margin-bottom:10px;opacity:1}
-  .tstop .notif-m::after{display:none}
-  .query{grid-template-columns:1fr}
-  .qarrow{transform:rotate(90deg);justify-self:center}
-  .proof{grid-template-columns:1fr}
+  .hero-grid{grid-template-columns:1fr}
+  .stage{max-width:340px;margin-top:10px}
+  .examples,.market{grid-template-columns:1fr}
+  .ladder{grid-template-columns:1fr}
+  .rung:nth-child(n){min-height:0}
+  .how{grid-template-columns:1fr;gap:28px}
+  .how::before{display:none}
+  .how.track .hstep{opacity:1}
 }
-@media (max-width:720px){
+@media (max-width:640px){
   body{font-size:16px}
-  .rings,.ctx-rings{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rings{grid-template-columns:repeat(2,minmax(0,1fr))}
   .rings .rcell:last-child{grid-column:1/-1}
-  .dstats,.channels,.trio,.chats,.split,.orbit-list,.tstops{grid-template-columns:1fr}
-  .dhead{display:none}
-  .drow{grid-template-columns:1fr;padding:16px 18px;gap:10px}
-  .drow > span{padding:0!important;background:none!important;box-shadow:none!important}
-  .drow .new{padding:12px 14px!important;border-left:3px solid var(--cyan);background:rgba(61,134,255,.12)!important}
-  .old::before,.new::before{content:"Tradicional";position:static;display:block;width:auto;height:auto;background:none;border-radius:0;box-shadow:none;font-family:var(--cond);font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;color:var(--red)}
-  .new::before{content:"Iungo";color:var(--cyan)}
-  .xray{grid-template-columns:1fr}
+  .pillars{grid-template-columns:1fr}
   .pilot{grid-template-columns:1fr;gap:36px}
-  .pilot li.chev{display:none}
-  .pipe{grid-template-columns:1fr;justify-items:center}
-  .beam{width:4px;height:30px;background:linear-gradient(180deg,rgba(79,208,255,.2),var(--cyan))}
-  .fan{display:none}
-  .dests{grid-template-columns:repeat(3,minmax(0,1fr));text-align:center}
-  .logos span + span{border-left:0}
-  .push{right:-4%}
-  .after .shoebox{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;aspect-ratio:auto}
-  .after .shoebox svg.shoe{flex:0 0 78%;order:-1;margin-bottom:6px}
-  .atag{position:static}
+  .chev{display:none}
+  .rules{grid-template-columns:1fr}
 }
-@media (max-width:420px){.rings,.ctx-rings{grid-template-columns:1fr}.rings .rcell:last-child{grid-column:auto}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.progress{display:none}}
 </style>
 </head>
 <body>
 <div class="progress" aria-hidden="true"><span></span></div>
 
-<!-- Reusable shoe drawing -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <linearGradient id="gUpper" x1="0" x2="1"><stop offset="0" stop-color="#ff9a4d"/><stop offset="1" stop-color="#ff6a2b"/></linearGradient>
-    <linearGradient id="gUpperB" x1="0" x2="1"><stop offset="0" stop-color="#cfe0ff"/><stop offset="1" stop-color="#7fa8ff"/></linearGradient>
-    <symbol id="shoe" viewBox="0 0 240 110">
-      <path d="M22 84C20 64 26 42 40 33c9-6 18-2 24 6 6 8 12 10 20 9 10-1 16-8 26-6 14 3 22 14 40 20 22 7 52 6 70 14 8 4 12 10 10 16H22z" style="fill:var(--up,url(#gUpper))"/>
-      <path d="M40 33c8 3 14 10 18 18" stroke="rgba(0,0,0,.18)" stroke-width="4" fill="none" stroke-linecap="round"/>
-      <path d="M92 50l9-10M104 53l9-10M116 57l9-10M128 61l8-9" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
-      <path d="M58 72c40-4 90-2 150 4" stroke="rgba(255,255,255,.55)" stroke-width="3" fill="none" stroke-linecap="round"/>
-      <path d="M16 84h212c6 0 8 6 6 10-2 5-8 7-16 7H30c-10 0-16-6-14-17z" fill="#f4f6fb"/>
-      <path d="M22 97h204" stroke="#1d2b52" stroke-width="4.5" stroke-linecap="round"/>
-    </symbol>
-  </defs>
-</svg>
-
-<!-- HERO -->
+<!-- 1. PRODUTO -->
 <header class="hero">
   <div class="wrap">
     <div class="topbar">
       <div class="logo" aria-label="Iungo Intelligence"><i aria-hidden="true"><b></b><b></b></i>iungo</div>
       <span class="tag">Preparado para a Centauro · outubro de 2026</span>
     </div>
-
     <div class="hero-grid">
       <div>
-        <h1>Centauro: cada atleta, a sua resposta.</h1>
-        <p class="lede">Do catálogo à recompra, com Inteligência Artificial. <b>E resultado medido no seu Analytics.</b></p>
-        <p class="byline">Iungo Intelligence, Grupo Novigo IT</p>
+        <span class="eyebrow">Iungo Omnichannel Suite</span>
+        <h1>A mensagem certa para cada atleta, <span class="hl">no momento exato.</span></h1>
+        <p class="lede">A Iungo é uma plataforma de <b>comunicação de hipercontexto</b>. Ela lê o que cada cliente da Centauro faz no site, no app e na loja, e envia a mensagem que faz sentido para ele, no canal certo, de forma automática.</p>
+        <div class="uses">
+          <div><p><b>Vender mais</b> <span>para quem já mostrou interesse num produto.</span></p></div>
+          <div><p><b>Trazer de volta</b> <span>no tempo certo de recompra, sem esperar o cliente pedir.</span></p></div>
+          <div><p><b>Escalar a personalização</b> <span>sem aumentar o time nem o volume de disparos.</span></p></div>
+        </div>
       </div>
       <div class="stage" aria-hidden="true">
         <svg class="orbits" viewBox="0 0 500 500">
@@ -444,439 +292,204 @@ a{color:inherit}
             <ellipse cx="250" cy="250" rx="215" ry="165" transform="rotate(-32 250 250)" fill="none" stroke="#ff8a3d" stroke-width="1" stroke-dasharray="200 160" opacity=".6"/>
             <ellipse cx="250" cy="250" rx="240" ry="125" transform="rotate(-10 250 250)" fill="none" stroke="#4fd0ff" stroke-width="1.4" stroke-dasharray="260 420" opacity=".7"/>
           </g></g>
-          <g stroke="#ff8a3d" stroke-linecap="round" opacity=".75">
-            <path d="M40 330l120-40" stroke-width="3"/><path d="M20 370l140-50" stroke-width="1.5"/><path d="M70 300l90-28" stroke-width="1.2"/>
-          </g>
         </svg>
-        <div class="phone">
-          <div class="screen">
-            <div class="notch"></div>
-            <div class="sbar"><span>9:41</span><span>●●● ▮</span></div>
-            <div class="pimg"><svg viewBox="0 0 240 110"><use href="#shoe"/></svg></div>
-            <div class="pinfo">
-              <b>Tênis de corrida masculino, amortecimento máximo</b>
-              <div class="pchips"><span>Pisada neutra</span><span>Drop 8 mm</span><span>Meia maratona</span><span>42 em estoque</span></div>
-            </div>
-            <div class="pbtn">Escolher o meu</div>
-          </div>
-          <div class="push"><span class="appi"><i><b></b><b></b></i></span><div><small>agora</small>Seu tênis deve estar perdendo o amortecimento. Este é o substituto ideal.</div></div>
-        </div>
+        <div class="phone"><div class="screen">
+          <div class="notch"></div>
+          <div class="clock">9:41</div>
+          <div class="date">segunda-feira, 26 de outubro</div>
+          <div class="pn"><span class="appi"><i><b></b><b></b></i></span><div><small>Centauro · agora</small>Lucas, seu tênis já tem uns 5 meses de asfalto. O substituto do seu modelo está no seu 42.</div></div>
+          <div class="pn"><span class="appi"><i><b></b><b></b></i></span><div><small>Centauro · 2 h</small>O tênis que você viu ficou 20% mais barato.</div></div>
+          <div class="pn"><span class="appi"><i><b></b><b></b></i></span><div><small>Centauro · ontem</small>A nova camisa do seu time chegou.</div></div>
+        </div></div>
       </div>
-    </div>
-
-    <div class="results glow">
-      <div class="results-head">
-        <h2>Resultados que já entregamos</h2>
-        <span class="eyebrow">Varejo de moda · medido pelo cliente</span>
-      </div>
-      <div class="rings">
-        <div class="rcell">
-          <div class="ring" style="--c:var(--blue)"><svg viewBox="0 0 120 120"><circle class="ri" cx="60" cy="60" r="44"/><circle class="rt" cx="60" cy="60" r="54"/><circle class="ra" cx="60" cy="60" r="54" pathLength="100"/></svg>
-            <div class="rin"><span class="rnum">&gt;5%</span><span class="rsub">digital</span></div></div>
-          <p class="rlabel">Incremento no digital<span>sobre a receita do canal digital do cliente</span></p>
-        </div>
-        <div class="rcell">
-          <div class="ring" style="--c:var(--green)"><svg viewBox="0 0 120 120"><circle class="ri" cx="60" cy="60" r="44"/><circle class="rt" cx="60" cy="60" r="54"/><circle class="ra" cx="60" cy="60" r="54" pathLength="100"/></svg>
-            <div class="rin"><span class="rnum">40<small>×</small></span><span class="rsub">ROAS</span></div></div>
-          <p class="rlabel">E-mail<span>sem custo de disparo; modelo baseado em resultado</span></p>
-        </div>
-        <div class="rcell long">
-          <div class="ring" style="--c:var(--orange)"><svg viewBox="0 0 120 120"><circle class="ri" cx="60" cy="60" r="44"/><circle class="rt" cx="60" cy="60" r="54"/><circle class="ra" cx="60" cy="60" r="54" pathLength="100"/></svg>
-            <div class="rin"><span class="rnum">11–15<small>×</small></span><span class="rsub">ROAS</span></div></div>
-          <p class="rlabel">SMS<span>sobre o custo total (envio + comissão)</span></p>
-        </div>
-      </div>
-      <p class="note" style="margin-top:20px">Resultados em operações de varejo de moda atendidas pela Iungo. SMS: setembro e outubro (1 a 20) de 2026, numa marca do grupo.</p>
     </div>
   </div>
 </header>
 
 <main>
-<!-- CONTEXT -->
+<!-- 1b. QUANDO FAZ SENTIDO -->
 <section class="sec">
   <div class="wrap"><div class="frame">
     <div class="sec-head">
-      <span class="eyebrow">A Centauro hoje</span>
-      <h2>Um trimestre recorde impulsionado pelo digital. <span class="hl">O desafio agora é a escala.</span></h2>
+      <span class="eyebrow">Quando faz sentido</span>
+      <h2>O próximo degrau da personalização: <span class="hl">da segmentação para a pessoa.</span></h2>
+      <p>A Iungo entra quando a empresa já tem base, CRM e volume digital, e quer que cada comunicação responda ao contexto de quem recebe.</p>
     </div>
-    <div class="ctx">
-      <div class="funnel">
-        <svg viewBox="0 0 420 360" aria-hidden="true">
-          <defs>
-            <linearGradient id="gF" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4fd0ff" stop-opacity=".9"/><stop offset="1" stop-color="#8c7bff" stop-opacity=".25"/></linearGradient>
-            <radialGradient id="gU"><stop offset="0" stop-color="#4fd0ff" stop-opacity=".55"/><stop offset="1" stop-color="#4fd0ff" stop-opacity="0"/></radialGradient>
-          </defs>
-          <g fill="none" stroke="url(#gF)" stroke-width="1.3">
-            <path d="M40 92C60 200 190 230 210 300"/><path d="M80 98C100 200 196 230 210 300"/><path d="M120 101C135 200 203 232 210 300"/><path d="M160 103C170 200 207 234 210 300"/><path d="M210 104V300"/>
-            <path d="M380 92C360 200 230 230 210 300"/><path d="M340 98C320 200 224 230 210 300"/><path d="M300 101C285 200 217 232 210 300"/><path d="M260 103C250 200 213 234 210 300"/>
-          </g>
-          <ellipse cx="210" cy="86" rx="180" ry="20" fill="rgba(79,208,255,.06)" stroke="#4fd0ff" stroke-width="2"/>
-          <g fill="none" stroke="#9fd8ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
-            <path d="M60 50h10l6 20h22l5-14H74"/><circle cx="80" cy="76" r="2.5"/><circle cx="96" cy="76" r="2.5"/>
-            <path d="M180 44l6-12h48l6 12zM186 44v26h48V44M204 70V56h12v14"/>
-            <rect x="310" y="32" width="56" height="38" rx="4"/><path d="M310 42h56M330 56l10 8 6-14"/>
-          </g>
-          <circle cx="210" cy="312" r="46" fill="url(#gU)"/>
-          <circle cx="210" cy="312" r="24" fill="#0b1f4d" stroke="#4fd0ff" stroke-width="2"/>
-          <g fill="none" stroke="#e8f4ff" stroke-width="2"><circle cx="210" cy="306" r="6"/><path d="M198 324c2-7 7-10 12-10s10 3 12 10"/></g>
-          <text x="210" y="16" text-anchor="middle" fill="#a8b8de" font-family="Roboto Condensed,Arial Narrow,sans-serif" font-size="14" letter-spacing="1.5">MARKETPLACE · LOJAS · APP · SITE</text>
-          <text x="210" y="358" text-anchor="middle" fill="#4fd0ff" font-family="Roboto Condensed,Arial Narrow,sans-serif" font-size="15" letter-spacing="1.5">UM ATLETA</text>
-        </svg>
-        <div class="callout glow"><b>Mais sellers, mais SKUs e mais tráfego</b> exigem um catálogo no mesmo padrão e uma conversa certa com cada pessoa, do fã de futebol ao maratonista. 76% dos consumidores se frustram quando a comunicação não é personalizada (McKinsey, 2021).</div>
-      </div>
-      <div>
-        <div class="ctx-rings">
-          <div class="rcell"><div class="ring long" style="--c:var(--violet)"><svg viewBox="0 0 120 120"><circle class="ri" cx="60" cy="60" r="44"/><circle class="rt" cx="60" cy="60" r="54"/><circle class="ra" cx="60" cy="60" r="54" pathLength="100"/></svg><div class="rin"><span class="rnum">+19,2%</span></div></div><p class="rlabel">Receita no 2T26</p></div>
-          <div class="rcell"><div class="ring" style="--c:var(--green)"><svg viewBox="0 0 120 120"><circle class="ri" cx="60" cy="60" r="44"/><circle class="rt" cx="60" cy="60" r="54"/><circle class="ra" cx="60" cy="60" r="54" pathLength="100"/></svg><div class="rin"><span class="rnum">+22%</span></div></div><p class="rlabel">Crescimento do canal digital</p></div>
-          <div class="rcell"><div class="ring long" style="--c:var(--orange)"><svg viewBox="0 0 120 120"><circle class="ri" cx="60" cy="60" r="44"/><circle class="rt" cx="60" cy="60" r="54"/><circle class="ra" cx="60" cy="60" r="54" pathLength="100"/></svg><div class="rin"><span class="rnum">+34,4%</span></div></div><p class="rlabel">Alta no GMV de 1P e 3P</p></div>
-          <div class="rcell"><div class="ring" style="--c:var(--red)"><svg viewBox="0 0 120 120"><circle class="ri" cx="60" cy="60" r="44"/><circle class="rt" cx="60" cy="60" r="54"/><circle class="ra" cx="60" cy="60" r="54" pathLength="100"/></svg><div class="rin"><span class="rnum">1 mi</span></div></div><p class="rlabel">Camisas oficiais vendidas pelo Grupo SBF na Copa</p></div>
+    <div class="ladder">
+      <div class="rung"><span class="lvl">Nível 1</span><h3>Campanha</h3><p>A mesma oferta, no mesmo dia, para toda a base.</p><span class="ex">"Semana de ofertas: até 50% off"</span></div>
+      <div class="rung"><span class="lvl">Nível 2</span><h3>Segmentação</h3><p>Grupos por perfil, montados no CRM: corredores, torcedores, compradores recentes.</p><span class="ex">"Ofertas de corrida para você"</span></div>
+      <div class="rung"><span class="iu-badge">Iungo</span><span class="lvl">Nível 3</span><h3>Hipercontexto 1:1</h3><p>Cada pessoa, no momento do sinal, cruzando produto, tamanho, preço, estoque e loja.</p><span class="ex">"Lucas, o tênis que você viu no 42 ficou 20% mais barato"</span></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- 2. EXEMPLOS -->
+<section class="sec">
+  <div class="wrap"><div class="frame">
+    <div class="sec-head">
+      <span class="eyebrow">O que a Centauro pode fazer</span>
+      <h2>Três mensagens que <span class="hl">ninguém precisou pedir.</span></h2>
+      <p>A plataforma percebe o sinal, decide a hora e o conteúdo e envia para os seus canais.</p>
+    </div>
+    <div class="examples">
+      <article class="ex-card glow">
+        <div class="ex-top"><span class="ex-kind">Recompra no tempo certo</span><span class="chip">E-mail · push</span></div>
+        <div class="msg"><div class="mh"><span class="appi"><i><b></b><b></b></i></span>Centauro · agora</div>Lucas, seu tênis de corrida já tem uns 5 meses de asfalto e deve estar perdendo o amortecimento. Separamos o substituto do seu modelo, no seu 42.</div>
+        <div class="sig"><h4>O sinal que a Iungo leu</h4><ul>
+          <li>Comprou um tênis de corrida há 5 meses, na loja</li>
+          <li>Ciclo de troca da categoria chegando</li>
+          <li>Voltou a navegar em corrida no app</li></ul></div>
+        <p class="why"><b>Por que vende:</b> é remarketing no momento certo, antes de ele ir procurar em outro lugar.</p>
+      </article>
+      <article class="ex-card glow">
+        <div class="ex-top"><span class="ex-kind">Preço baixou no que ele quer</span><span class="chip">SMS / RCS</span></div>
+        <div class="msg sms"><div class="mh"><span class="appi"><i><b></b><b></b></i></span>Mensagem · agora</div><div class="bub">CENTAURO: Lucas, o tênis que você viu no 42 ficou 20% mais barato. Veja: <u>link curto</u>. P/ sair veja no link</div></div>
+        <div class="sig"><h4>O sinal que a Iungo leu</h4><ul>
+          <li>Viu o mesmo modelo duas vezes e não comprou</li>
+          <li>O preço caiu hoje</li>
+          <li>O 42 tem estoque</li></ul></div>
+        <p class="why"><b>Por que vende:</b> o desconto vai só para quem estava esperando por ele, não para a base inteira.</p>
+      </article>
+      <article class="ex-card glow">
+        <div class="ex-top"><span class="ex-kind">Lançamento para o torcedor</span><span class="chip">WhatsApp</span></div>
+        <div class="msg wa"><div class="mh"><span class="appi"><i><b></b><b></b></i></span>Centauro · WhatsApp</div><div class="bub">Marina, a nova camisa do seu time chegou. Quer que a gente separe a sua, tamanho M, na loja perto de você?</div><div class="qr"><span>Separar na loja</span><span>Comprar no app</span></div></div>
+        <div class="sig"><h4>O sinal que a Iungo leu</h4><ul>
+          <li>Comprou a camisa do clube nas últimas temporadas</li>
+          <li>Tamanho M no histórico</li>
+          <li>Loja com estoque perto do endereço dela</li></ul></div>
+        <p class="why"><b>Por que vende:</b> o fã compra no lançamento. A mensagem chega sem cupom e preserva a margem.</p>
+      </article>
+    </div>
+    <div class="rules glow">
+      <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg></span>
+      <p><b>Os gatilhos são automáticos: a plataforma lê os sinais sozinha.</b> A Centauro define as regras do negócio, como o ciclo de troca de cada categoria, a margem mínima para dar desconto e a frequência máxima de contato.</p>
+    </div>
+  </div></div>
+</section>
+
+<!-- 3. MERCADO -->
+<section class="sec">
+  <div class="wrap"><div class="frame">
+    <div class="sec-head">
+      <span class="eyebrow">O mercado</span>
+      <h2>Personalizar virou o mínimo. <span class="hl">Acertar o momento é o que vende.</span></h2>
+    </div>
+    <div class="market">
+      <div class="mk glow"><span class="n">76%</span><h3>Clientes mais exigentes</h3><p>dos consumidores se frustram quando a comunicação não é personalizada (McKinsey, 2021).</p></div>
+      <div class="mk glow"><span class="n o">+22%</span><h3>O digital puxa o crescimento</h3><p>foi a alta do canal digital da Centauro no 2T26, com o GMV de 1P e 3P subindo 34,4%.</p></div>
+      <div class="mk glow"><span class="t">Contexto é o novo padrão</span><h3>Personalização e analytics são o básico</h3><p>A diferença está em usar produto, loja e momento em cada mensagem.</p></div>
+    </div>
+    <p class="note" style="margin-top:18px">Fontes: McKinsey, Next in Personalization 2021; Grupo SBF, resultados do 2T26 (SGB Media, 11/08/2026).</p>
+  </div></div>
+</section>
+
+<!-- 4. RESULTADOS -->
+<section class="sec">
+  <div class="wrap"><div class="frame">
+    <div class="sec-head">
+      <span class="eyebrow">Resultados</span>
+      <h2>O que a hiperpersonalização <span class="hl">já entrega.</span></h2>
+    </div>
+    <div class="res-grid">
+      <div class="res-col glow">
+        <h3>Ganhos financeiros</h3>
+        <div class="rings">
+          <div class="rcell">
+            <div class="ring" style="--c:var(--blue)"><svg viewBox="0 0 120 120"><circle class="ri" cx="60" cy="60" r="44"/><circle class="rt" cx="60" cy="60" r="54"/><circle class="ra" cx="60" cy="60" r="54" pathLength="100"/></svg><div class="rin"><span class="rnum">&gt;5%</span><span class="rsub">vendas</span></div></div>
+            <p class="rlabel">Crescimento de vendas<span>no canal digital do cliente</span></p>
+          </div>
+          <div class="rcell">
+            <div class="ring" style="--c:var(--green)"><svg viewBox="0 0 120 120"><circle class="ri" cx="60" cy="60" r="44"/><circle class="rt" cx="60" cy="60" r="54"/><circle class="ra" cx="60" cy="60" r="54" pathLength="100"/></svg><div class="rin"><span class="rnum">40<small>×</small></span><span class="rsub">ROAS</span></div></div>
+            <p class="rlabel">E-mail<span>sem custo de disparo</span></p>
+          </div>
+          <div class="rcell long">
+            <div class="ring" style="--c:var(--orange)"><svg viewBox="0 0 120 120"><circle class="ri" cx="60" cy="60" r="44"/><circle class="rt" cx="60" cy="60" r="54"/><circle class="ra" cx="60" cy="60" r="54" pathLength="100"/></svg><div class="rin"><span class="rnum">11–15<small>×</small></span><span class="rsub">ROAS</span></div></div>
+            <p class="rlabel">SMS / RCS<span>sobre envio + comissão</span></p>
+          </div>
         </div>
-        <p class="note src">Fontes: Grupo SBF, resultados do 2T26 (SGB Media, 11/08/2026; Quartr); EuQueroInvestir, 1T26.</p>
+      </div>
+      <div class="res-col glow">
+        <h3>Ganhos operacionais</h3>
+        <div class="ops">
+          <div class="op" style="--c:var(--cyan)"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.5"/></svg></span><div><b>Menos custo operacional</b><span>As réguas rodam sozinhas. O time sai do disparo manual e passa a cuidar da estratégia.</span></div></div>
+          <div class="op" style="--c:var(--violet)"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><div><b>Escalável e parametrizável</b><span>A mesma régua vale para qualquer categoria, marca ou seller, só mudando os parâmetros.</span></div></div>
+          <div class="op" style="--c:var(--orange)"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span><div><b>Time to market curto</b><span>A implantação começa com uma tag no GTM e o catálogo, sem projeto longo de integração.</span></div></div>
+        </div>
       </div>
     </div>
+    <div class="res-foot"><span class="lbl">Canais integrados</span><div class="chips"><span class="chip">E-mail</span><span class="chip">SMS / RCS</span><span class="chip">WhatsApp</span><span class="chip">Página da marca</span></div></div>
+    <p class="note" style="margin-top:14px">Resultados em operações de varejo de moda atendidas pela Iungo.</p>
   </div></div>
 </section>
 
-<!-- DIFFERENTIAL -->
-<section class="sec">
-  <div class="wrap"><div class="frame">
-    <div class="sec-head">
-      <span class="eyebrow">Nosso diferencial</span>
-      <h2>Por que a Iungo entrega <span class="hl">mais do que uma ferramenta de CRM.</span></h2>
-      <p>A maioria das soluções resolve um canal. A Iungo liga catálogo, comportamento, lojas e canais no mesmo cliente, e o modelo comercial acompanha o resultado.</p>
-    </div>
-    <div class="dstats">
-      <div class="dstat glow"><span class="dn">1</span><p>plataforma para catálogo, perfil único, comportamento e todos os canais</p></div>
-      <div class="dstat glow"><span class="dn">0</span><p>custo de disparo no e-mail: o modelo é baseado em resultado</p></div>
-      <div class="dstat glow"><span class="dn">0</span><p>taxa por assento para lojas, times e sellers, sem risco cambial</p></div>
-    </div>
-    <div class="dtable" role="table" aria-label="Abordagem tradicional comparada à Iungo">
-      <div class="drow dhead" role="row"><span role="columnheader"></span><span role="columnheader">Abordagem tradicional</span><span role="columnheader" class="iu">Iungo</span></div>
-      <div class="drow" role="row"><span class="topic" role="rowheader">Plataforma</span><span class="old" role="cell">Uma ferramenta para e-mail, outra para SMS, outra para catálogo, com dados que não se conversam.</span><span class="new" role="cell">Um só núcleo: perfil único, Behavior Intelligence, canais e IA de catálogo falando com o mesmo cliente.</span></div>
-      <div class="drow" role="row"><span class="topic" role="rowheader">Catálogo</span><span class="old" role="cell">Personaliza em cima do cadastro que existe, sem pisada, drop, grade ou tipo de campo.</span><span class="new" role="cell">O Organizer enriquece o catálogo 1P e 3P antes. A recomendação sabe o que cada tênis resolve.</span></div>
-      <div class="drow" role="row"><span class="topic" role="rowheader">Lojas</span><span class="old" role="cell">Digital e loja separados: quem comprou na loja ainda recebe "esqueceu o carrinho".</span><span class="new" role="cell">ERP e PDV conectados: um cliente só e o estoque da loja dentro da recomendação.</span></div>
-      <div class="drow" role="row"><span class="topic" role="rowheader">Vendas agênticas</span><span class="old" role="cell">Comunicação pensada só para e-mail, SMS e site.</span><span class="new" role="cell">Catálogo estruturado para ser recomendado por IA, com Agent SEO Score e saída para ChatGPT (ACP) e Gemini (UCP) no roadmap.</span></div>
-      <div class="drow" role="row"><span class="topic" role="rowheader">Modelo comercial</span><span class="old" role="cell">Licença por contato, disparo ou usuário, muitas vezes em dólar, paga antes do resultado.</span><span class="new" role="cell">Modelo baseado em resultado, contrato em reais e sem custo por usuário.</span></div>
-      <div class="drow" role="row"><span class="topic" role="rowheader">Implantação e prova</span><span class="old" role="cell">Projeto longo de integração antes do primeiro resultado, medido no painel do fornecedor.</span><span class="new" role="cell">Começa com uma tag no GTM e o catálogo. Piloto numa categoria, com grupo de controle e medido no seu Analytics.</span></div>
-    </div>
-  </div></div>
-</section>
-
-<!-- SIX SOLUTIONS -->
+<!-- 5. COMO FUNCIONA -->
 <section class="sec">
   <div class="wrap"><div class="frame">
     <div class="sec-head">
       <span class="eyebrow">Como chegamos a esse resultado</span>
-      <h2>Seis soluções. <span class="hl">Uma única jornada, da busca à recompra.</span></h2>
+      <h2>Conecta, entende, age.</h2>
     </div>
-    <div class="orbit">
-      <svg viewBox="0 0 1000 580" aria-hidden="true">
-        <defs>
-          <linearGradient id="gO" x1="0" x2="1"><stop offset="0" stop-color="#ff8a3d"/><stop offset=".5" stop-color="#4fd0ff"/><stop offset="1" stop-color="#8c7bff"/></linearGradient>
-          <radialGradient id="gC"><stop offset="0" stop-color="#3d86ff" stop-opacity=".45"/><stop offset="1" stop-color="#3d86ff" stop-opacity="0"/></radialGradient>
-        </defs>
-        <g fill="none" stroke="url(#gO)">
-          <ellipse cx="500" cy="310" rx="390" ry="175" stroke-width="1" opacity=".35"/>
-          <ellipse cx="500" cy="310" rx="350" ry="157" stroke-width="1" opacity=".42"/>
-          <ellipse cx="500" cy="310" rx="310" ry="139" stroke-width="1.2" opacity=".5"/>
-          <ellipse cx="500" cy="310" rx="270" ry="121" stroke-width="1.2" opacity=".58"/>
-          <ellipse cx="500" cy="310" rx="230" ry="103" stroke-width="1.4" opacity=".66"/>
-          <ellipse cx="500" cy="310" rx="190" ry="85" stroke-width="1.6" opacity=".8"/>
-        </g>
-        <ellipse cx="500" cy="310" rx="210" ry="110" fill="url(#gC)"/>
-        <ellipse cx="500" cy="310" rx="150" ry="66" fill="rgba(5,16,40,.85)" stroke="#4fd0ff" stroke-width="2.5" style="filter:drop-shadow(0 0 10px #4fd0ff)"/>
-        <g stroke-width="2.5" opacity=".85">
-          <path d="M275 100L395 262" stroke="#3be39c"/><path d="M235 310H350" stroke="#ff8a3d"/><path d="M275 520L395 358" stroke="#ff4f6d"/>
-          <path d="M725 100L605 262" stroke="#3d86ff"/><path d="M765 310H650" stroke="#4fd0ff"/><path d="M725 520L605 358" stroke="#ffb547"/>
-        </g>
-      </svg>
-      <div class="core"><b>3 motores de IA</b><span>Semântico · Comportamental · Orquestração</span></div>
-
-      <div class="node l" style="left:27.5%;top:17.2%;--c:var(--green)"><div class="bulb"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/><path d="M15 9l5-5M17 4h3v3"/></svg></div>
-        <div class="ntext"><small>Fundação</small><b>Hyper-Personalization</b><span>Oferta certa, sempre</span></div></div>
-      <div class="node l" style="left:23.5%;top:53.4%;--c:var(--orange)"><div class="bulb"><svg viewBox="0 0 24 24"><ellipse cx="10" cy="5" rx="7" ry="2.5"/><path d="M3 5v10c0 1.4 3.1 2.5 7 2.5M3 10c0 1.4 3.1 2.5 7 2.5M17 5v4"/><circle cx="17.5" cy="15" r="2.6"/><path d="M13 22c.6-2 2.3-3 4.5-3s3.9 1 4.5 3"/></svg></div>
-        <div class="ntext"><small>Fundação</small><b>Collect</b><span>Perfil único na rede</span></div></div>
-      <div class="node l" style="left:27.5%;top:89.6%;--c:var(--red)"><div class="bulb"><svg viewBox="0 0 24 24"><path d="M12 17s-4.5-2.8-4.5-6A2.5 2.5 0 0 1 12 9.6a2.5 2.5 0 0 1 4.5 1.4c0 3.2-4.5 6-4.5 6z"/><path d="M4 12a8 8 0 0 1 13.5-5.8M20 12a8 8 0 0 1-13.5 5.8M17.5 3v3.2h-3.2M6.5 21v-3.2h3.2"/></svg></div>
-        <div class="ntext"><small>Relacionamento</small><b>Engage</b><span>Réguas automáticas</span></div></div>
-      <div class="node r" style="left:72.5%;top:17.2%;--c:var(--blue)"><div class="bulb"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="5" height="5" rx="1"/><rect x="10" y="3" width="5" height="5" rx="1"/><rect x="3" y="10" width="5" height="5" rx="1"/><circle cx="15.5" cy="15.5" r="4"/><path d="M18.5 18.5L22 22"/></svg></div>
-        <div class="ntext"><small>Descoberta</small><b>Organizer</b><span>Catálogo 1P e 3P no mesmo padrão</span></div></div>
-      <div class="node r" style="left:76.5%;top:53.4%;--c:var(--cyan)"><div class="bulb"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H10l-5 4v-4H4z"/><path d="M9 10.5h.01M12 10.5h.01M15 10.5h.01" stroke-width="2.6"/></svg></div>
-        <div class="ntext"><small>Consideração</small><b>Advisor</b><span>Especialista em cada conversa</span></div></div>
-      <div class="node r" style="left:72.5%;top:89.6%;--c:var(--amber)"><div class="bulb"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1.2 13H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2M9.5 14.5l2 2 3.5-3.5"/></svg></div>
-        <div class="ntext"><small>Compra e pós-venda</small><b>Concierge</b><span>Troca, status e compra no chat</span></div></div>
-
-      <div class="orbit-list">
-        <div class="ol-core glow"><b>3 motores de IA</b><span>Semântico · Comportamental · Orquestração</span></div>
-        <div class="ol glow" style="--c:var(--blue)"><div class="bulb"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="5" height="5" rx="1"/><rect x="10" y="3" width="5" height="5" rx="1"/><rect x="3" y="10" width="5" height="5" rx="1"/><circle cx="15.5" cy="15.5" r="4"/><path d="M18.5 18.5L22 22"/></svg></div><div class="ntext"><small>Descoberta</small><b>Organizer</b><span>Catálogo 1P e 3P no mesmo padrão</span></div></div>
-        <div class="ol glow" style="--c:var(--cyan)"><div class="bulb"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H10l-5 4v-4H4z"/><path d="M9 10.5h.01M12 10.5h.01M15 10.5h.01" stroke-width="2.6"/></svg></div><div class="ntext"><small>Consideração</small><b>Advisor</b><span>Especialista em cada conversa</span></div></div>
-        <div class="ol glow" style="--c:var(--amber)"><div class="bulb"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1.2 13H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2M9.5 14.5l2 2 3.5-3.5"/></svg></div><div class="ntext"><small>Compra e pós-venda</small><b>Concierge</b><span>Troca, status e compra no chat</span></div></div>
-        <div class="ol glow" style="--c:var(--red)"><div class="bulb"><svg viewBox="0 0 24 24"><path d="M12 17s-4.5-2.8-4.5-6A2.5 2.5 0 0 1 12 9.6a2.5 2.5 0 0 1 4.5 1.4c0 3.2-4.5 6-4.5 6z"/><path d="M4 12a8 8 0 0 1 13.5-5.8M20 12a8 8 0 0 1-13.5 5.8M17.5 3v3.2h-3.2M6.5 21v-3.2h3.2"/></svg></div><div class="ntext"><small>Relacionamento</small><b>Engage</b><span>Réguas automáticas</span></div></div>
-        <div class="ol glow" style="--c:var(--orange)"><div class="bulb"><svg viewBox="0 0 24 24"><ellipse cx="10" cy="5" rx="7" ry="2.5"/><path d="M3 5v10c0 1.4 3.1 2.5 7 2.5M3 10c0 1.4 3.1 2.5 7 2.5M17 5v4"/><circle cx="17.5" cy="15" r="2.6"/><path d="M13 22c.6-2 2.3-3 4.5-3s3.9 1 4.5 3"/></svg></div><div class="ntext"><small>Fundação</small><b>Collect</b><span>Perfil único na rede</span></div></div>
-        <div class="ol glow" style="--c:var(--green)"><div class="bulb"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/><path d="M15 9l5-5M17 4h3v3"/></svg></div><div class="ntext"><small>Fundação</small><b>Hyper-Personalization</b><span>Oferta certa, sempre</span></div></div>
-      </div>
+    <div class="how">
+      <div class="hstep"><span class="k">01</span><h3>Conecta</h3><p>Site, app, lojas, catálogo e base de clientes, com ERP e PDV.</p><div class="chips"><span class="chip">Tag no GTM</span><span class="chip">Catálogo</span><span class="chip">ERP e PDV</span></div></div>
+      <div class="hstep"><span class="k">02</span><h3>Entende</h3><p>Um perfil único por cliente, com o que ele vê, compra, calça e onde compra.</p><div class="chips"><span class="chip">Navegação</span><span class="chip">Preço</span><span class="chip">Estoque</span><span class="chip">LGPD</span></div></div>
+      <div class="hstep"><span class="k">03</span><h3>Age</h3><p>Escolhe a mensagem, o canal e a hora, e mede tudo contra um grupo de controle.</p><div class="chips"><span class="chip">E-mail</span><span class="chip">SMS</span><span class="chip">WhatsApp</span></div></div>
     </div>
   </div></div>
 </section>
 
-<!-- DATA FLOW + CHANNELS -->
+<!-- 6. DIFERENCIAL -->
 <section class="sec">
   <div class="wrap"><div class="frame">
     <div class="sec-head">
-      <span class="eyebrow">Uma plataforma, todos os canais</span>
-      <h2>A Centauro vista pelos olhos de <span class="hl">cada atleta.</span></h2>
-      <p>O mesmo núcleo conecta site, app, marketplace e lojas, decide a mensagem e escolhe o canal.</p>
+      <span class="eyebrow">Nosso diferencial</span>
+      <h2>O CRM do futuro entende <span class="hl">o produto, a loja e o momento.</span></h2>
+      <p>A Iungo trabalha junto com o CRM que a Centauro já usa e acrescenta seis inteligências, numa jornada da busca à recompra.</p>
     </div>
-    <div class="flow">
-      <div class="step"><h3>Entradas</h3><p>Conectamos o que a Centauro já tem, sem projeto de integração longo.</p><div class="chips"><span class="chip">Tag no GTM</span><span class="chip">Catálogo 1P e 3P</span><span class="chip">Base de clientes</span><span class="chip">ERP e PDV</span></div></div>
-      <div class="step"><h3>Perfil único</h3><p>O cliente do site, do app, do marketplace e da loja passa a ser a mesma pessoa.</p></div>
-      <div class="step"><h3>Behavior Intelligence</h3><p>Lê o comportamento em tempo real e cruza com preço e estoque.</p><div class="chips"><span class="chip">Navegação</span><span class="chip">Preço</span><span class="chip">Estoque por tamanho</span><span class="chip">Lista</span></div></div>
-      <div class="step"><h3>Canais</h3><p>E-mail, SMS e WhatsApp, com página da marca e descadastro por canal.</p></div>
+    <div class="pillars">
+      <div class="pillar glow" style="--c:var(--orange)"><span class="bulb" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="10" cy="5" rx="7" ry="2.5"/><path d="M3 5v10c0 1.4 3.1 2.5 7 2.5M3 10c0 1.4 3.1 2.5 7 2.5M17 5v4"/><circle cx="17.5" cy="15" r="2.6"/><path d="M13 22c.6-2 2.3-3 4.5-3s3.9 1 4.5 3"/></svg></span><span class="prod">Iungo Collect</span><h3>Enxerga a loja</h3><p>Perfil único na rede: loja, site, app e marketplace no mesmo cliente, com o estoque da loja mais próxima.</p></div>
+      <div class="pillar glow" style="--c:var(--blue)"><span class="bulb" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="5" height="5" rx="1"/><rect x="10" y="3" width="5" height="5" rx="1"/><rect x="3" y="10" width="5" height="5" rx="1"/><circle cx="15.5" cy="15.5" r="4"/><path d="M18.5 18.5L22 22"/></svg></span><span class="prod">Iungo Organizer</span><h3>Entende o produto</h3><p>A IA enriquece o catálogo 1P e 3P com pisada, drop, grade e clube. A mensagem sabe o que cada tênis resolve.</p></div>
+      <div class="pillar glow" style="--c:var(--green)"><span class="bulb" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/><path d="M15 9l5-5M17 4h3v3"/></svg></span><span class="prod">Iungo Hyper-Personalization</span><h3>Age no momento</h3><p>Gatilhos 1:1 em tempo real, a partir de preço, estoque e comportamento. A oferta certa, sempre.</p></div>
+      <div class="pillar glow" style="--c:var(--red)"><span class="bulb" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 17s-4.5-2.8-4.5-6A2.5 2.5 0 0 1 12 9.6a2.5 2.5 0 0 1 4.5 1.4c0 3.2-4.5 6-4.5 6z"/><path d="M4 12a8 8 0 0 1 13.5-5.8M20 12a8 8 0 0 1-13.5 5.8M17.5 3v3.2h-3.2M6.5 21v-3.2h3.2"/></svg></span><span class="prod">Iungo Engagement</span><h3>Fala no ritmo do esporte</h3><p>Réguas automáticas de lançamento, recompra e reconquista, cada uma medida contra um grupo de controle.</p></div>
+      <div class="pillar glow" style="--c:var(--cyan)"><span class="bulb" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H10l-5 4v-4H4z"/><path d="M9 10.5h.01M12 10.5h.01M15 10.5h.01" stroke-width="2.6"/></svg></span><span class="prod">Iungo Advisor</span><h3>Vende como especialista</h3><p>Pergunta pisada, distância e tipo de campo e chega no modelo certo. Na loja, vira copiloto do vendedor.</p></div>
+      <div class="pillar glow" style="--c:var(--amber)"><span class="bulb" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1.2 13H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2M9.5 14.5l2 2 3.5-3.5"/></svg></span><span class="prod">Iungo Concierge</span><h3>Resolve o pós-venda</h3><p>Troca de tamanho, status de pedido de qualquer seller e compra, tudo na mesma conversa.</p></div>
     </div>
-
-    <div class="xray glow">
-      <div class="face" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="12" r="5"/><path d="M7 27c1.5-5 5-7.5 9-7.5s7.5 2.5 9 7.5M3 8V3h5M29 8V3h-5M3 24v5h5M29 24v5h-5"/></svg></div>
-      <div><h3>Data X-Ray: o perfil que a IA enxerga</h3><p>Loja, app e marketplace consolidados num perfil único, com consentimento (LGPD).</p></div>
-      <div class="quote">"Calça 42, corre no asfalto, comprou há 5 meses"</div>
-    </div>
-
-    <div class="channels">
-      <div class="ch glow"><span class="when">Toda a jornada</span><h3>E-mail</h3><p>Réguas de abandono, recompra e lançamento. Sem custo de disparo.</p><span class="roi">40<small>×</small><em>de ROAS</em></span></div>
-      <div class="ch glow"><span class="when">Alta intenção</span><h3>SMS</h3><p>Nome, produto e preço novo num link só, no momento em que o sinal aparece.</p><span class="roi">11–15<small>×</small><em>de ROAS</em></span></div>
-      <div class="ch glow"><span class="when">Ticket alto e lista</span><h3>WhatsApp</h3><p>Lançamento de tênis premium, lista de desejos e o kit completo.</p><span class="roi txt">Maior ticket por conversa</span></div>
-    </div>
-    <p class="foot">Quem comprou na loja não recebe "esqueceu o carrinho", e a recomendação usa o estoque da loja mais próxima.</p>
-  </div></div>
-</section>
-
-<!-- TWO CONVERSATIONS -->
-<section class="sec">
-  <div class="wrap"><div class="frame">
-    <div class="sec-head">
-      <span class="eyebrow">Na prática</span>
-      <h2>O mesmo corredor, <span class="hl">duas conversas.</span></h2>
-      <p>A campanha fala com a base. O Behavior Trigger fala com a pessoa, no momento em que ela mostrou interesse.</p>
-    </div>
-    <div class="convo">
-      <div class="side mass">
-        <span class="side-label">Campanha</span>
-        <div class="blast"><b>Semana de ofertas: até 50% off em tudo</b><div class="bar"></div><div class="bar s"></div><div class="bar"></div></div>
-        <p>A mesma oferta, no mesmo dia, para toda a base. O fã que compraria a camisa sem desconto recebe cupom; o corredor que esperava o preço do tênis dele não recebe nada.</p>
-      </div>
-      <div class="side one glow">
-        <span class="side-label">1:1 · Behavior Intelligence · redução de preço</span>
-        <div class="trio">
-          <div class="moment"><span class="n">1</span>
-            <div class="mini"><div class="sms">CENTAURO: Lucas, o tênis de corrida que você viu no 42 está 20% mais barato. Veja: <u>link curto</u>. P/ sair veja no link</div></div>
-            <p class="cap">SMS com nome, produto, tamanho e preço novo, num link só.</p></div>
-          <div class="moment"><span class="n">2</span>
-            <div class="mini"><div class="pimg"><svg viewBox="0 0 240 110"><use href="#shoe"/></svg></div>Lucas, o tênis que você gostou está com o melhor preço<div class="pm"><b>−20%</b><em>só para quem viu este modelo</em></div><div class="pbtn">Escolher o meu · 42 disponível</div></div>
-            <p class="cap">A página da Centauro, com o modelo que ele viu e o tamanho em estoque.</p></div>
-          <div class="moment"><span class="n">3</span>
-            <div class="mini kit"><div><span>Meia de corrida cano curto</span><span>+ adicionar</span></div><div><span>Garrafa 750 ml</span><span>+ adicionar</span></div><div><span>Bermuda com bolso</span><span>+ adicionar</span></div></div>
-            <p class="cap">O kit que outros corredores levaram junto, e descadastro por canal no rodapé.</p></div>
-        </div>
-      </div>
-    </div>
-    <p class="note" style="margin-top:16px">Exemplo ilustrativo, sem relação com um produto real do portfólio.</p>
-  </div></div>
-</section>
-
-<!-- TRACK -->
-<section class="sec">
-  <div class="wrap"><div class="frame">
-    <div class="sec-head">
-      <span class="eyebrow">Iungo Engage</span>
-      <h2>Recompra e lançamentos no <span class="hl">ritmo exato do esporte.</span></h2>
-    </div>
-    <div class="trackart">
-      <svg viewBox="0 0 1200 380" aria-hidden="true">
-                <g fill="none" stroke-linecap="butt">
-          <path d="M-40 240C60 240 110 300 200 300S360 175 470 180S640 305 760 300S930 175 1030 180S1180 240 1260 240" class="lane" stroke="#ffd2b5" stroke-width="92"/>
-          <path d="M-40 240C60 240 110 300 200 300S360 175 470 180S640 305 760 300S930 175 1030 180S1180 240 1260 240" class="lane" stroke="#e8582c" stroke-width="88"/>
-          <path d="M-40 240C60 240 110 300 200 300S360 175 470 180S640 305 760 300S930 175 1030 180S1180 240 1260 240" class="lane" stroke="#ffd2b5" stroke-width="68"/>
-          <path d="M-40 240C60 240 110 300 200 300S360 175 470 180S640 305 760 300S930 175 1030 180S1180 240 1260 240" class="lane" stroke="#e8582c" stroke-width="65"/>
-          <path d="M-40 240C60 240 110 300 200 300S360 175 470 180S640 305 760 300S930 175 1030 180S1180 240 1260 240" class="lane" stroke="#ffd2b5" stroke-width="46"/>
-          <path d="M-40 240C60 240 110 300 200 300S360 175 470 180S640 305 760 300S930 175 1030 180S1180 240 1260 240" class="lane" stroke="#e8582c" stroke-width="43"/>
-          <path d="M-40 240C60 240 110 300 200 300S360 175 470 180S640 305 760 300S930 175 1030 180S1180 240 1260 240" class="lane" stroke="#ffd2b5" stroke-width="24"/>
-          <path d="M-40 240C60 240 110 300 200 300S360 175 470 180S640 305 760 300S930 175 1030 180S1180 240 1260 240" class="lane" stroke="#e8582c" stroke-width="21"/>
-        </g>
-        <g class="pins">
-          <g class="pin" data-x=".2"><circle cx="200" cy="300" r="16" fill="rgba(79,208,255,.25)"/><circle cx="200" cy="300" r="7" fill="#4fd0ff" style="filter:drop-shadow(0 0 6px #4fd0ff)"/></g>
-          <g class="pin" data-x=".42"><circle cx="470" cy="180" r="16" fill="rgba(79,208,255,.25)"/><circle cx="470" cy="180" r="7" fill="#4fd0ff" style="filter:drop-shadow(0 0 6px #4fd0ff)"/></g>
-          <g class="pin" data-x=".66"><circle cx="760" cy="300" r="16" fill="rgba(79,208,255,.25)"/><circle cx="760" cy="300" r="7" fill="#4fd0ff" style="filter:drop-shadow(0 0 6px #4fd0ff)"/></g>
-          <g class="pin" data-x=".88"><circle cx="1030" cy="180" r="16" fill="rgba(79,208,255,.25)"/><circle cx="1030" cy="180" r="7" fill="#4fd0ff" style="filter:drop-shadow(0 0 6px #4fd0ff)"/></g>
-        </g>
-      </svg>
-      <div class="notif" style="left:16.67%;top:78.9%" data-x=".2"><span class="appi"><i><b></b><b></b></i></span><div><small>agora</small>A camisa do seu clube chegou.</div></div>
-      <div class="notif" style="left:39.17%;top:47.4%" data-x=".42"><span class="appi"><i><b></b><b></b></i></span><div><small>agora</small>Voltou o seu número: a chuteira 41 está na loja perto de você.</div></div>
-      <div class="notif" style="left:63.33%;top:78.9%" data-x=".66"><span class="appi"><i><b></b><b></b></i></span><div><small>agora</small>Seu tênis deve estar perdendo o amortecimento.</div></div>
-      <div class="notif" style="left:85.83%;top:47.4%" data-x=".88"><span class="appi"><i><b></b><b></b></i></span><div><small>agora</small>Faz tempo que você não corre com a gente.</div></div>
-    </div>
-    <div class="tstops">
-      <div class="tstop"><div class="notif notif-m" aria-hidden="true"><span class="appi"><i><b></b><b></b></i></span><div>A camisa do seu clube chegou.</div></div><h3>Lançamento</h3><p>Disparo para quem é fã do clube, sem cupom: o torcedor que compra no dia não precisa de desconto.</p></div>
-      <div class="tstop"><div class="notif notif-m" aria-hidden="true"><span class="appi"><i><b></b><b></b></i></span><div>Voltou o seu número.</div></div><h3>Grade</h3><p>O tamanho esgotado voltou ao estoque, no site ou na loja mais próxima.</p></div>
-      <div class="tstop"><div class="notif notif-m" aria-hidden="true"><span class="appi"><i><b></b><b></b></i></span><div>Seu tênis deve estar perdendo o amortecimento.</div></div><h3>Recompra</h3><p>Gatilho no ritmo de uso do tênis, sugerindo o modelo substituto ideal.</p></div>
-      <div class="tstop"><div class="notif notif-m" aria-hidden="true"><span class="appi"><i><b></b><b></b></i></span><div>Faz tempo que você não corre com a gente.</div></div><h3>Reconquista</h3><p>Ofertas baseadas no histórico físico e digital do cliente.</p></div>
-    </div>
-    <div class="control glow"><b>Cada régua roda com grupo de controle.</b> A Centauro vê a receita incremental, venda a venda.</div>
-  </div></div>
-</section>
-
-<!-- CHATS -->
-<section class="sec">
-  <div class="wrap"><div class="frame">
-    <div class="sec-head">
-      <span class="eyebrow">Iungo Advisor e Iungo Concierge</span>
-      <h2>Conversas que <span class="hl">vendem e resolvem</span> em segundos.</h2>
-    </div>
-    <div class="chats">
-      <div class="chatcol">
-        <div class="cphone"><div class="cscreen">
-          <div class="chead"><span class="appi"><i><b></b><b></b></i></span><div><b>Iungo Advisor</b><small>online</small></div></div>
-          <div class="cbody">
-            <div class="bubble me" style="--i:0">Vou correr minha primeira meia maratona. Qual tênis?</div>
-            <div class="bubble bot" style="--i:1">Legal! Você sabe se sua pisada é neutra? E corre mais no asfalto ou na esteira?</div>
-            <div class="bubble me" style="--i:2">Neutra, no asfalto.</div>
-            <div class="bubble bot" style="--i:3">Para esse perfil, estes três têm o amortecimento certo para distâncias longas. Quer comparar?</div>
-            <div class="bubble cards" style="--i:4">
-              <div><svg viewBox="0 0 240 110"><use href="#shoe"/></svg>Amortecimento máx.</div>
-              <div style="--up:url(#gUpperB)"><svg viewBox="0 0 240 110"><use href="#shoe"/></svg>Drop 8 mm</div>
-              <div><svg viewBox="0 0 240 110"><use href="#shoe"/></svg>Leve, asfalto</div>
-            </div>
-          </div>
-          <div class="cinput">Mensagem</div>
-        </div></div>
-        <p class="chatcap"><b>Iungo Advisor:</b> o especialista em corrida e futebol no digital, ou o copiloto do vendedor na loja. Menos trocas.</p>
-      </div>
-      <div class="chatcol">
-        <div class="cphone"><div class="cscreen">
-          <div class="chead"><span class="appi"><i><b></b><b></b></i></span><div><b>Iungo Concierge</b><small>online</small></div></div>
-          <div class="cbody">
-            <div class="bubble me" style="--i:0">A chuteira do meu filho ficou pequena. Dá para trocar?</div>
-            <div class="bubble bot" style="--i:1">Encontrei o pedido de 12/10. Trocamos pelo número 36? Posso gerar a etiqueta ou reservar na loja mais perto de você.</div>
-            <div class="bubble me" style="--i:2">Reserva na loja.</div>
-            <div class="bubble bot" style="--i:3">Pronto: o 36 está separado. É só levar a chuteira até a loja.</div>
-          </div>
-          <div class="cinput">Mensagem</div>
-        </div></div>
-        <p class="chatcap"><b>Iungo Concierge:</b> do "comprar agora" ao pós-venda. Troca de tamanho e status de pedido de qualquer seller na mesma conversa.</p>
-      </div>
-    </div>
-  </div></div>
-</section>
-
-<!-- CATALOG -->
-<section class="sec">
-  <div class="wrap"><div class="frame">
-    <div class="sec-head">
-      <span class="eyebrow">Iungo Organizer · AI PIM</span>
-      <h2><span style="color:var(--cyan)">O seu catálogo</span> no idioma que as IAs entendem.</h2>
-      <p>A IA recebe do seller (planilha, XML, ficha da marca), entende, padroniza e publica nos canais.</p>
-    </div>
-    <div class="split">
-      <div class="half before">
-        <h3>Antes</h3>
-        <div class="shoebox"><svg class="shoe" viewBox="0 0 240 110"><use href="#shoe"/></svg></div>
-        <span class="jag">TENIS CORRIDA MASC AMORT 42</span>
-        <p>Sem pisada, sem drop, sem indicação de distância. Nenhuma régua consegue recomendar esse produto, e nenhuma IA também.</p>
-      </div>
-      <div class="half after">
-        <h3>Depois</h3>
-        <div class="shoebox">
-          <svg class="shoe" viewBox="0 0 240 110" style="--up:url(#gUpperB)"><use href="#shoe"/></svg>
-          <span class="atag" style="left:2%;top:6%">Pisada: <b>neutra</b></span>
-          <span class="atag" style="right:2%;top:6%">Drop: <b>8 mm</b></span>
-          <span class="atag" style="left:2%;bottom:4%">Distância: <b>meia maratona</b></span>
-          <span class="atag" style="right:2%;bottom:4%">Superfície: <b>asfalto</b></span>
-        </div>
-        <p class="ptitle">Tênis de corrida <span>masculino, amortecimento máximo, pisada neutra, drop 8 mm.</span> Grade unificada e buy box protegida.</p>
-      </div>
-    </div>
-    <div class="query">
-      <div class="qbar"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="7"/><path d="M16 16l5 5"/></svg>Qual tênis para meia maratona, pisada neutra?</div>
-      <span class="qarrow" aria-hidden="true">→</span>
-      <div class="qans">O produto aparece porque <b>o cadastro responde à pergunta.</b></div>
-    </div>
-
     <div class="agentic glow">
-      <div class="radar">
-        <svg viewBox="-26 0 292 232" aria-hidden="true">
-          <g fill="none" stroke="rgba(79,208,255,.28)">
-            <polygon points="120,20 215,89 179,200 61,200 25,89"/><polygon points="120,55 182,100 158,172 82,172 58,100"/><polygon points="120,90 149,111 138,145 102,145 91,111"/>
-            <path d="M120 125V20M120 125L215 89M120 125L179 200M120 125L61 200M120 125L25 89"/>
-          </g>
-          <polygon points="120,30 200,94 165,183 85,168 40,92" fill="rgba(79,208,255,.18)" stroke="#4fd0ff" stroke-width="2" style="filter:drop-shadow(0 0 6px #4fd0ff)"/>
-          <g fill="#4fd0ff"><circle cx="120" cy="30" r="4"/><circle cx="200" cy="94" r="4"/><circle cx="165" cy="183" r="4"/><circle cx="85" cy="168" r="4"/><circle cx="40" cy="92" r="4"/></g>
-          <g fill="#a8b8de" font-family="Roboto Condensed,Arial Narrow,sans-serif" font-size="13" text-anchor="middle">
-            <text x="120" y="12">Pisada</text><text x="222" y="84">Drop</text><text x="186" y="222">Material</text><text x="54" y="222">Cor</text><text x="20" y="80">Tamanho</text>
-          </g>
-        </svg>
-        <h3>Agent SEO Score</h3>
-        <p>Uma nota por SKU: o quanto ele está pronto para ser recomendado por um agente, e o atributo que falta. Por seller e por categoria.</p>
+      <span class="bulb" style="--c:var(--blue)" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M18.5 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></span>
+      <div class="ag-text">
+        <span class="prod">Iungo Organizer</span><h3>Pronta para vendas agênticas e GEO</h3>
+        <p>Catálogo estruturado para ser recomendado por IA. Com SEO e GEO, as páginas da Centauro aparecem na busca e viram resposta no ChatGPT e no Gemini.</p>
       </div>
-      <div>
-        <div class="sec-head" style="margin-bottom:22px">
-          <h2 style="font-size:clamp(1.4rem,2.6vw,2rem)">O corredor já pede indicação para a IA. <span class="hl">O seu catálogo está pronto?</span></h2>
-          <p>Protocolos abertos (UCP e ACP) já permitem que a resposta da IA vire pedido. Quem tem o catálogo mais completo é quem a IA recomenda.</p>
-        </div>
-        <div class="pipe">
-          <div class="pnode"><div class="box"><svg viewBox="0 0 40 40"><path d="M20 4l14 8v16l-14 8-14-8V12z"/><path d="M6 12l14 8 14-8M20 20v16"/></svg></div><b>Catálogo 1P/3P</b><span>Centauro</span></div>
-          <div class="beam"></div>
-          <div class="pnode"><div class="box"><svg viewBox="0 0 40 40"><path d="M14 4h12l10 10v12L26 36H14L4 26V14z"/><path d="M14 15h12M12 20h16M14 25h12"/></svg></div><b>Organizer</b><span>Iungo</span></div>
-          <svg class="fan" viewBox="0 0 120 150" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0 75C50 75 60 18 120 18" fill="none" stroke="#4fd0ff" stroke-width="3" style="filter:drop-shadow(0 0 5px #4fd0ff)"/>
-            <path d="M0 75H120" fill="none" stroke="#8c7bff" stroke-width="3" style="filter:drop-shadow(0 0 5px #8c7bff)"/>
-            <path d="M0 75C50 75 60 132 120 132" fill="none" stroke="#ff8a3d" stroke-width="3" style="filter:drop-shadow(0 0 5px #ff8a3d)"/>
-          </svg>
-          <div class="dests">
-            <div class="dest" style="color:var(--cyan)"><b>Google Gemini</b><span>UCP</span></div>
-            <div class="dest" style="color:var(--violet)"><b>ChatGPT</b><span>ACP</span></div>
-            <div class="dest" style="color:var(--orange)"><b>Busca Centauro</b><span>site e app</span></div>
-          </div>
-        </div>
+      <div class="ag-road">
+        <span class="lbl on">Ativo hoje</span>
+        <div class="chips"><span class="chip live">SEO</span><span class="chip live">GEO</span><span class="chip live">Agent SEO Score</span></div>
+        <span class="lbl">No roadmap</span>
+        <div class="chips"><span class="chip">ChatGPT (ACP)</span><span class="chip">Gemini (UCP)</span><span class="chip muse">Muse (WhatsApp)</span></div>
       </div>
-      <p class="note">Organizer 3P disponível em 1º de novembro. Saída para UCP e ACP e o Agent SEO Score são os próximos lançamentos.</p>
-    </div>
-  </div></div>
-</section>
-
-<!-- PROOF -->
-<section class="sec">
-  <div class="wrap"><div class="frame">
-    <div class="sec-head">
-      <span class="eyebrow">Por que a Iungo</span>
-      <h2>O motor das maiores operações. <span class="hl">O próximo passo é nosso.</span></h2>
-    </div>
-    <div class="logos glow"><span>O Organizer já sanou catálogos de grandes operações de varejo e marketplace do Brasil.</span></div>
-    <div class="proof">
-      <div class="glow"><span class="k">&gt;5%</span><h3>De incremento no digital</h3><p>Réguas e personalização numa operação de varejo de moda, com o e-mail a 40× e o SMS de 11× a 15× de ROAS.</p></div>
-      <div class="glow"><span class="k">0</span><h3>Cobrança por usuário</h3><p>Modelo baseado em resultado. Contrato em reais, sem risco cambial e sem taxa por assento.</p></div>
-      <div class="glow"><span class="k">20+</span><h3>Anos de Grupo Novigo IT</h3><p>Mais de 20 anos de tecnologia no Brasil e mais de 200 empresas atendidas.</p></div>
     </div>
   </div></div>
 </section>
 </main>
 
-<!-- CTA -->
+<!-- 7. CTA -->
 <footer class="sec cta">
   <div class="wrap"><div class="frame" style="border-color:rgba(79,208,255,.6);box-shadow:0 0 60px rgba(61,134,255,.25)">
     <span class="eyebrow">Próximo passo</span>
-    <h2 style="margin-top:12px">Vamos provar com <span class="hl">uma categoria e sellers reais.</span></h2>
-    <p class="lede">Um piloto curto, com grupo de controle, para a Centauro ver o resultado no próprio Analytics antes de escalar.</p>
+    <h2>Vamos provar com <span class="hl">uma categoria real.</span></h2>
+    <p class="lede">Um piloto curto, com grupo de controle, para a Centauro ver o resultado nos próprios números antes de escalar.</p>
     <ol class="pilot">
-      <li class="pstep glow"><span class="num">1</span><h3>A Centauro escolhe a categoria</h3><p>Por exemplo, tênis de corrida, de 1P e de alguns sellers do marketplace.</p></li>
+      <li class="pstep glow"><span class="num">1</span><h3>A Centauro escolhe a categoria</h3><p>Por exemplo, tênis de corrida.</p></li>
       <li class="chev" aria-hidden="true">›</li>
-      <li class="pstep glow"><span class="num">2</span><h3>Nós medimos a prontidão</h3><p>Atributos, duplicidade e Agent SEO Score, produto por produto.</p></li>
+      <li class="pstep glow"><span class="num">2</span><h3>Ligamos duas réguas</h3><p>Redução de preço e recompra, com as regras da Centauro.</p></li>
       <li class="chev" aria-hidden="true">›</li>
-      <li class="pstep glow"><span class="num">3</span><h3>Mostramos o antes e o depois</h3><p>Com uma régua de redução de preço ou de lançamento rodando contra um grupo de controle.</p></li>
+      <li class="pstep glow"><span class="num">3</span><h3>Medimos contra o controle</h3><p>Conversão e vendas incrementais, venda a venda.</p></li>
     </ol>
     <div class="cta-row">
-      <a class="btn" href="https://wa.me/55119896169669?text=Ol%C3%A1%20Fabio%2C%20quero%20agendar%20o%20piloto%20da%20Iungo%20para%20a%20Centauro." target="_blank" rel="noopener">
+      <a class="btn" href="https://wa.me/5511996169669?text=Ol%C3%A1%2C%20F%C3%A1bio%21%20Vi%20a%20proposta%20da%20Iungo%20para%20a%20Centauro%20e%20quero%20conversar%20sobre%20o%20piloto.%20Qual%20o%20melhor%20hor%C3%A1rio%20para%20falarmos%20esta%20semana%3F" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg>
         Agendar o piloto pelo WhatsApp</a>
-      <p class="contact"><b>Fabio Baptistela</b> · Iungo Intelligence, Grupo Novigo IT<br>WhatsApp <span id="site">+55 11 9896169669</span><button class="copy" id="copy-btn" type="button">Copiar</button> · <a href="https://iungo-ai.com" target="_blank" rel="noopener">iungo-ai.com</a></p>
+      <p class="contact"><b>Fábio Baptislla</b> · Iungo Intelligence, Grupo Novigo IT<br>WhatsApp <span id="site">+55 11 99616-9669</span><button class="copy" id="copy-btn" type="button">Copiar</button> · <a href="https://iungo-ai.com" target="_blank" rel="noopener">iungo-ai.com</a></p>
     </div>
-    <div class="sign"><b>Inteligência para o varejo esportivo.</b><span>Outubro de 2026 · Iungo Intelligence, Grupo Novigo IT</span></div>
+    <div class="sign"><b>Inteligência para o varejo esportivo.</b><span>Grupo Novigo IT · mais de 20 anos de tecnologia no Brasil</span></div>
   </div></div>
 </footer>
 
@@ -893,84 +506,47 @@ document.getElementById('copy-btn').addEventListener('click',function(){
   if(reduce||!('IntersectionObserver' in window))return;
   var vh=function(){return window.innerHeight||document.documentElement.clientHeight};
   var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
-  var below=function(el,k){return el.getBoundingClientRect().top>vh()*(k||.92)};
+  var below=function(el){return el.getBoundingClientRect().top>vh()*.92};
 
-  /* 1. Count-up on big numbers */
   function countUp(el){
-    if(el.dataset.done)return; el.dataset.done='1';
+    if(el.dataset.done)return;el.dataset.done='1';
     var node=null;
     for(var i=0;i<el.childNodes.length;i++){if(el.childNodes[i].nodeType===3&&/\d/.test(el.childNodes[i].nodeValue)){node=el.childNodes[i];break}}
     if(!node)return;
     var tpl=node.nodeValue,nums=[];
     tpl.replace(/\d+(?:,\d+)?/g,function(m){nums.push({v:parseFloat(m.replace(',','.')),d:(m.split(',')[1]||'').length});return m});
     var t0=null,dur=1500;
-    function frame(t){
-      if(!t0)t0=t;var k=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-k,3),j=0;
+    function frame(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-k,3),j=0;
       node.nodeValue=tpl.replace(/\d+(?:,\d+)?/g,function(){var n=nums[j++];return (n.v*e).toFixed(n.d).replace('.',',')});
-      if(k<1)requestAnimationFrame(frame);else node.nodeValue=tpl;
-    }
+      if(k<1)requestAnimationFrame(frame);else node.nodeValue=tpl}
     requestAnimationFrame(frame);
   }
   var numIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){countUp(e.target);numIO.unobserve(e.target)}})},{threshold:.6});
-  $$('.rnum, .ch .roi:not(.txt), .proof .k').forEach(function(el){numIO.observe(el)});
+  $$('.rnum, .mk .n').forEach(function(el){numIO.observe(el)});
 
-  /* 2. Ring arcs draw in */
-  var ringIO=new IntersectionObserver(function(es){es.forEach(function(e){
-    if(e.isIntersecting){var a=e.target.querySelector('.ra');requestAnimationFrame(function(){a.style.strokeDashoffset=''});ringIO.unobserve(e.target)}
-  })},{threshold:.5});
+  var ringIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var a=e.target.querySelector('.ra');requestAnimationFrame(function(){a.style.strokeDashoffset=''});ringIO.unobserve(e.target)}})},{threshold:.5});
   $$('.ring').forEach(function(r){var a=r.querySelector('.ra');a.style.transition='none';a.style.strokeDashoffset='100';a.getBoundingClientRect();a.style.transition='';ringIO.observe(r)});
 
-  /* 3. Reveal with stagger, only for blocks starting below the fold */
-  var groups=[
-    ['.sec-head','pre'],['.funnel','pre-l'],['.ctx-rings .rcell','pre-s'],['.dstat','pre-s'],['.drow','pre'],
-    ['.orbit','pre-s'],['.ol','pre'],['.xray','pre'],['.ch','pre'],['.mass','pre-l'],['.moment','pre'],
-    ['.tstop','pre'],['.control','pre'],['.chatcol','pre'],['.half','pre-s'],['.query','pre'],['.agentic','pre'],
-    ['.logos','pre'],['.proof > div','pre'],['.cta h2','pre'],['.cta .lede','pre'],['.pstep','pre'],['.cta-row','pre']
-  ];
-  var revIO=new IntersectionObserver(function(es){es.forEach(function(e){
-    if(e.isIntersecting){e.target.classList.remove('pre','pre-l','pre-s');revIO.unobserve(e.target)}
-  })},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
-  groups.forEach(function(g){
-    $$(g[0]).forEach(function(el){
-      if(el.offsetParent===null&&!el.closest('.orbit'))return;
-      el.classList.add('rv');
-      var sib=Array.prototype.indexOf.call(el.parentNode.children,el);
-      el.style.setProperty('--d',Math.min(sib,6)*100+'ms');
-      if(below(el)){el.classList.add(g[1]);revIO.observe(el)}
-    });
-  });
+  var groups=[['.sec-head','pre'],['.rung','pre'],['.ex-card','pre'],['.rules','pre'],['.mk','pre-s'],['.res-col','pre'],['.res-foot','pre'],['.pillar','pre'],['.agentic','pre'],['.cta h2','pre'],['.cta .lede','pre'],['.pstep','pre'],['.cta-row','pre']];
+  var revIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove('pre','pre-s');revIO.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  groups.forEach(function(g){$$(g[0]).forEach(function(el){
+    el.classList.add('rv');
+    el.style.setProperty('--d',Math.min(Array.prototype.indexOf.call(el.parentNode.children,el),5)*120+'ms');
+    if(below(el)){el.classList.add(g[1]);revIO.observe(el)}
+  })});
 
-  /* 4. Convo focus */
-  var convo=document.querySelector('.convo');
-  if(convo)new IntersectionObserver(function(es){es.forEach(function(e){convo.classList.toggle('lit',e.isIntersecting)})},{threshold:.5}).observe(convo.querySelector('.one'));
-
-  /* 5. Chat bubbles play in sequence */
-  var chatIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('play');chatIO.unobserve(e.target)}})},{threshold:.35});
-  $$('.cphone').forEach(function(p){if(below(p,.75)){p.classList.add('seq');chatIO.observe(p)}});
-
-  /* 6. Scroll-linked: progress, hero orbit, flow line, running track */
-  var bar=document.querySelector('.progress'),hero=document.querySelector('.hero'),flow=document.querySelector('.flow');
-  var steps=flow?$$('.step',flow):[];
-  if(flow)flow.classList.add('track');
-  var art=document.querySelector('.trackart'),lanes=art?$$('.lane',art):[],pins=art?$$('.pin',art):[],notifs=art?$$('.notif',art):[];
-  if(art){art.classList.add('track');lanes.forEach(function(l){l.setAttribute('pathLength','1');l.style.strokeDasharray='1'})}
+  var bar=document.querySelector('.progress'),hero=document.querySelector('.hero'),how=document.querySelector('.how');
+  var steps=how?$$('.hstep',how):[];
+  if(how)how.classList.add('track');
   var ticking=false;
   function update(){
     ticking=false;
     var y=window.scrollY||document.documentElement.scrollTop,h=vh(),max=document.documentElement.scrollHeight-h;
     bar.style.setProperty('--sp',max>0?Math.min(1,y/max):0);
     if(hero)hero.style.setProperty('--rot',(y*.06)+'deg');
-    if(flow){
-      var rc=flow.getBoundingClientRect(),p=Math.max(0,Math.min(1,(h*.85-rc.top)/(h*.5)));
-      flow.style.setProperty('--p',p.toFixed(3));
-      steps.forEach(function(s,i){s.classList.toggle('on',p>=(i+.5)/steps.length||p>=.999)});
-    }
-    if(art){
-      var ra=art.getBoundingClientRect(),q=Math.max(0,Math.min(1,(h*.92-ra.top)/(ra.height+h*.35)));
-      lanes.forEach(function(l){l.style.strokeDashoffset=(1-q).toFixed(4)});
-      pins.forEach(function(pn){pn.classList.toggle('on',q>=parseFloat(pn.dataset.x)*.95)});
-      notifs.forEach(function(n){n.classList.toggle('on',q>=parseFloat(n.dataset.x)*.95)});
-    }
+    if(how){var rc=how.getBoundingClientRect(),p=Math.max(0,Math.min(1,(h*.85-rc.top)/(h*.45)));
+      how.style.setProperty('--p',p.toFixed(3));
+      steps.forEach(function(s,i){s.classList.toggle('on',p>=(i+.5)/steps.length||p>=.999)})}
   }
   function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(update)}}
   window.addEventListener('scroll',onScroll,{passive:true});
